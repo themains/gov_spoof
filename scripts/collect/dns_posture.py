@@ -142,20 +142,37 @@ def status_of(block):
     return "invalid", block.get("error")
 
 
-def spf_qualifier(record):
-    """The 'all' qualifier decides whether SPF actually rejects anything.
+def spf_qualifier(spf):
+    """The effective `all` qualifier, taken from checkdmarc's parsed output.
 
-    -all is a hard fail, ~all a soft fail that most receivers accept anyway, and
-    +all is worse than no record at all because it authorises the world.
+    This previously substring-matched "-all"/"~all" against the raw record --
+    hand-rolling something the library already does properly, and getting it
+    wrong on exactly the hard cases. It disagreed with checkdmarc on 4 of 125
+    records, and the two it called "no_all" were the two using `redirect=`,
+    where the effective policy comes from the redirect target and there is no
+    literal `all` token to find. Substring matching would also cheerfully match
+    an "-all" appearing inside an exp= string.
+
+    checkdmarc resolves the redirect chain and returns 'fail', 'softfail',
+    'neutral' or 'pass'. Use that.
     """
-    if not record:
+    if not isinstance(spf, dict):
         return None
-    r = str(record).lower()
-    for token, label in (("-all", "hard_fail"), ("~all", "soft_fail"),
-                         ("?all", "neutral"), ("+all", "pass_all")):
-        if token in r:
-            return label
-    return "no_all"
+    parsed = spf.get("parsed")
+    return parsed.get("all") if isinstance(parsed, dict) else None
+
+
+def spf_lookups(spf):
+    """DNS lookups an SPF record costs to evaluate.
+
+    RFC 7208 caps this at 10; a record that exceeds it is a permerror at the
+    receiver and provides no protection at all, however well-formed it looks.
+    checkdmarc counts them, so record it rather than assuming compliance.
+    """
+    if not isinstance(spf, dict):
+        return None
+    n = spf.get("dns_lookups")
+    return n if isinstance(n, int) else None
 
 
 def domains_from_frame():
@@ -275,7 +292,8 @@ def emit(results, dom, today, ns_label):
             "dmarc_policy": policy,
             "dmarc_error": d_err,
             "spf_status": s_status,
-            "spf_qualifier": spf_qualifier(spf.get("record") if isinstance(spf, dict) else None),
+            "spf_qualifier": spf_qualifier(spf),
+            "spf_dns_lookups": spf_lookups(spf),
             "spf_error": s_err,
             "mta_sts": status_of(res.get("mta_sts"))[0],
             "dnssec": res.get("dnssec"),
