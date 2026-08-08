@@ -1,0 +1,204 @@
+country_qid,country,cc3,legislature_qid,legislature,website,domain,retrieved_date,source_id
+Q222,Albania,ALB,Q1135960,Parliament of Albania,https://parlament.al,parlament.al,2026-08-08,wikidata_p194
+Q262,Algeria,DZA,Q3142337,Parliament of Algeria,http://www.apn-dz.org,apn-dz.org,2026-08-08,wikidata_p194
+Q228,Andorra,AND,Q24824,General Council of Andorra,http://www.consellgeneral.ad,consellgeneral.ad,2026-08-08,wikidata_p194
+Q916,Angola,AGO,Q1969479,National Assembly of Angola,http://www.parlamento.ao/,parlamento.ao,2026-08-08,wikidata_p194
+Q781,Antigua and Barbuda,ATG,Q1280751,Parliament of Antigua and Barbuda,,,2026-08-08,wikidata_p194
+Q414,Argentina,ARG,Q646190,Argentine National Congress,https://www.congreso.gob.ar/,congreso.gob.ar,2026-08-08,wikidata_p194
+Q399,Armenia,ARM,Q1337463,National Assembly of Armenia,https://parliament.am,parliament.am,2026-08-08,wikidata_p194
+Q408,Australia,AUS,Q382118,Parliament of Australia,https://www.aph.gov.au/,aph.gov.au,2026-08-08,wikidata_p194
+Q40,Austria,AUT,Q4817650,Austrian Parliament,https://www.parlament.gv.at/,parlament.gv.at,2026-08-08,wikidata_p194
+Q227,Azerbaijan,AZE,Q330600,National Assembly of Azerbaijan,https://meclis.gov.az,meclis.gov.az,2026-08-08,wikidata_p194
+Q398,Bahrain,BHR,Q3242616,National Assembly of Bahrain,,,2026-08-08,wikidata_p194
+Q902,Bangladesh,BGD,Q1684080,Jatiya Sangsad,https://www.parliament.gov.bd/,parliament.gov.bd,2026-08-08,wikidata_p194
+Q244,Barbados,BRB,Q2565909,Parliament of Barbados,https://www.barbadosparliament.com/,barbadosparliament.com,2026-08-08,wikidata_p194
+Q184,Belarus,BLR,Q1798607,National Assembly of the Republic of Belarus,,,2026-08-08,wikidata_p194
+Q31,Belgium,BEL,Q1137059,Belgian Federal Parliament,https://www.fed-parl.be/,fed-parl.be,2026-08-08,wikidata_p194
+Q242,Belize,BLZ,Q1965042,National Assembly,http://www.nationalassembly.gov.bz/,nationalassembly.gov.bz,2026-08-08,wikidata_p194
+Q962,Benin,BEN,Q1969527,National Assembly,http://assemblee-nationale.bj/,assemblee-nationale.bj,2026-08-08,wikidata_p194
+Q917,Bhutan,BTN,Q2080399,Parliament of Bhutan,https://parliament.bt/,parliament.bt,2026-08-08,wikidata_p194
+Q750,Bolivia,BOL,Q1968458,Plurinational Legislative Assembly,,,2026-08-08,wikidata_p194
+Q225,Bosnia and Herzegovina,BIH,Q2604031,Parliamentary Assembly of Bosnia and Herzegovina,https://www.parlament.ba/,parlament.ba,2026-08-08,wikidata_p194
+Q963,Botswana,BWA,Q859658,National Assembly of Botswana,http://www.parliament.gov.bw/,parliament.gov.bw,2026-08-08,wikidata_p194
+Q155,Brazil,BRA,Q949699,National Congress of Brazil,https://www.congressonacional.leg.br/,congressonacional.leg.br,2026-08-08,wikidata_p194
+Q921,Brunei,BRN,Q2396996,Legislative Council of Brunei,http://www.councils.gov.bn/,councils.gov.bn,2026-08-08,wikidata_p194
+Q219,Bulgaria,BGR,Q639704,National Assembly of Bulgaria,https://www.parliament.bg,parliament.bg,2026-08-08,wikidata_p194
+Q965,Burkina Faso,BFA,Q619238,National Assembly of Burkina Faso,https://www.assembleenationale.bf,assembleenationale.bf,2026-08-08,wikidata_p194
+Q967,Burundi,BDI,Q7138930,Parliament of Burundi,,,2026-08-08,wikidata_p194
+Q424,Cambodia,KHM,Q1320418,Parliament of Cambodia,,,2026-08-08,wikidata_p194
+Q1009,Cameroon,CMR,Q25039919,Parliament of Cameroon,,,2026-08-08,wikidata_p194
+Q16,Canada,CAN,Q475689,Parliament of Canada,https://parl.ca,parl.ca,2026-08-08,wikidata_p194
+Q1011,Cape Verde,CPV,Q1718790,National Assembly of Cape Verde,https://www.parlamento.cv/,parlamento.cv,2026-08-08,wikidata_p194
+Q929,Central African Republic,CAF,Q1577158,National Assembly,,,2026-08-08,wikidata_p194
+Q657,Chad,TCD,Q1599346,National Assembly,https://www.assemblee-nationale.td/,assemblee-nationale.td,2026-08-08,wikidata_p194
+Q298,Chile,CHL,Q1968468,National Congress of Chile,http://www.congreso.cl/,congreso.cl,2026-08-08,wikidata_p194
+Q739,Colombia,COL,Q1284236,Congress of Colombia,,,2026-08-08,wikidata_p194
+Q970,Comoros,COM,Q1573424,Assembly of the Union of the Comoros,,,2026-08-08,wikidata_p194
+Q800,Costa Rica,CRI,Q1386962,Legislative Assembly of Costa Rica,http://www.asamblea.go.cr,asamblea.go.cr,2026-08-08,wikidata_p194
+Q224,Croatia,HRV,Q371576,Parliament of Croatia,http://www.sabor.hr,sabor.hr,2026-08-08,wikidata_p194
+Q241,Cuba,CUB,Q720753,National Assembly of People's Power,http://www.parlamentocubano.gob.cu/,parlamentocubano.gob.cu,2026-08-08,wikidata_p194
+Q229,Cyprus,CYP,Q1112381,House of Representatives,https://www.parliament.cy/,parliament.cy,2026-08-08,wikidata_p194
+Q213,Czech Republic,CZE,Q2347172,Parliament of the Czech Republic,,,2026-08-08,wikidata_p194
+Q974,Democratic Republic of the Congo,COD,Q282928,Parliament of the Democratic Republic of the Congo,,,2026-08-08,wikidata_p194
+Q977,Djibouti,DJI,Q1139363,National Assembly,http://www.assemblee-nationale.dj,assemblee-nationale.dj,2026-08-08,wikidata_p194
+Q784,Dominica,DMA,Q1297237,House of Assembly of Dominica,http://houseofassembly.gov.dm/,houseofassembly.gov.dm,2026-08-08,wikidata_p194
+Q786,Dominican Republic,DOM,Q595411,Congress of the Dominican Republic,,,2026-08-08,wikidata_p194
+Q736,Ecuador,ECU,Q1319595,National Assembly,https://www.asambleanacional.gob.ec/,asambleanacional.gob.ec,2026-08-08,wikidata_p194
+Q79,Egypt,EGY,Q2584535,Parliament of Egypt,,,2026-08-08,wikidata_p194
+Q792,El Salvador,SLV,Q1812873,Legislative Assembly of El Salvador,https://www.asamblea.gob.sv,asamblea.gob.sv,2026-08-08,wikidata_p194
+Q983,Equatorial Guinea,GNQ,Q16878152,Parliament of Equatorial Guinea,,,2026-08-08,wikidata_p194
+Q986,Eritrea,ERI,Q2094027,National Assembly,,,2026-08-08,wikidata_p194
+Q191,Estonia,EST,Q217799,Riigikogu,https://www.riigikogu.ee/,riigikogu.ee,2026-08-08,wikidata_p194
+Q1050,Eswatini,SWZ,Q7138942,Parliament of Eswatini,https://www.parliament.gov.sz/,parliament.gov.sz,2026-08-08,wikidata_p194
+Q115,Ethiopia,ETH,Q257899,Federal Parliamentary Assembly,,,2026-08-08,wikidata_p194
+Q702,Federated States of Micronesia,FSM,Q1287548,Congress of the Federated States of Micronesia,https://cfsm.gov.fm/,cfsm.gov.fm,2026-08-08,wikidata_p194
+Q712,Fiji,FJI,Q4345425,Parliament of Fiji,http://www.parliament.gov.fj/,parliament.gov.fj,2026-08-08,wikidata_p194
+Q33,Finland,FIN,Q643412,Parliament of Finland,https://www.eduskunta.fi/,eduskunta.fi,2026-08-08,wikidata_p194
+Q142,France,FRA,Q632552,French Parliament,https://www.parlement.fr,parlement.fr,2026-08-08,wikidata_p194
+Q1000,Gabon,GAB,Q4345413,Parliament of Gabon,,,2026-08-08,wikidata_p194
+Q230,Georgia,GEO,Q1417210,Parliament of Georgia,https://parliament.ge/,parliament.ge,2026-08-08,wikidata_p194
+Q183,Germany,DEU,Q146138,Bundesrat,https://www.bundesrat.de/,bundesrat.de,2026-08-08,wikidata_p194
+Q183,Germany,DEU,Q154797,German Bundestag,https://www.bundestag.de/,bundestag.de,2026-08-08,wikidata_p194
+Q117,Ghana,GHA,Q1807513,Parliament of Ghana,http://www.parliament.gh,parliament.gh,2026-08-08,wikidata_p194
+Q41,Greece,GRC,Q477089,Hellenic Parliament,https://www.hellenicparliament.gr,hellenicparliament.gr,2026-08-08,wikidata_p194
+Q769,Grenada,GRD,Q1253647,Parliament of Grenada,https://grenadaparliament.gd/,grenadaparliament.gd,2026-08-08,wikidata_p194
+Q774,Guatemala,GTM,Q1136026,Congress of the Republic of Guatemala,https://congreso.gob.gt,congreso.gob.gt,2026-08-08,wikidata_p194
+Q1006,Guinea,GIN,Q1853235,National Assembly,,,2026-08-08,wikidata_p194
+Q1007,Guinea-Bissau,GNB,Q740533,National People's Assembly,https://www.parlamento.gw/,parlamento.gw,2026-08-08,wikidata_p194
+Q734,Guyana,GUY,Q1512579,National Assembly,https://parliament.gov.gy/,parliament.gov.gy,2026-08-08,wikidata_p194
+Q790,Haiti,HTI,Q742110,Parliament of Haiti,http://www.leparlementhaitien.info/,leparlementhaitien.info,2026-08-08,wikidata_p194
+Q783,Honduras,HND,Q1415847,National Congress of Honduras,http://www.congresonacional.hn/,congresonacional.hn,2026-08-08,wikidata_p194
+Q28,Hungary,HUN,Q648716,National Assembly,https://www.parlament.hu/,parlament.hu,2026-08-08,wikidata_p194
+Q189,Iceland,ISL,Q131279,Althing,https://althingi.is,althingi.is,2026-08-08,wikidata_p194
+Q668,India,IND,Q695252,Parliament of India,https://sansad.in/poi,sansad.in,2026-08-08,wikidata_p194
+Q252,Indonesia,IDN,Q818711,People's Consultative Assembly,https://mpr.go.id/,mpr.go.id,2026-08-08,wikidata_p194
+Q794,Iran,IRN,Q378605,Islamic Consultative Assembly,https://rc.majlis.ir/,rc.majlis.ir,2026-08-08,wikidata_p194
+Q796,Iraq,IRQ,Q1973075,Council of Representatives of Iraq,https://www.parliament.iq/,parliament.iq,2026-08-08,wikidata_p194
+Q27,Ireland,IRL,Q129821,Oireachtas,http://www.oireachtas.ie,oireachtas.ie,2026-08-08,wikidata_p194
+Q801,Israel,ISR,Q133396,The Knesset,https://main.knesset.gov.il,main.knesset.gov.il,2026-08-08,wikidata_p194
+Q38,Italy,ITA,Q1117578,Italian Parliament,https://www.parlamento.it/,parlamento.it,2026-08-08,wikidata_p194
+Q1008,Ivory Coast,CIV,Q27881072,Parliament of Ivory Coast,,,2026-08-08,wikidata_p194
+Q766,Jamaica,JAM,Q122635,Parliament of Jamaica,http://japarliament.gov.jm,japarliament.gov.jm,2026-08-08,wikidata_p194
+Q17,Japan,JPN,Q202384,National Diet,http://www.sangiin.go.jp/eng/index.htm,sangiin.go.jp,2026-08-08,wikidata_p194
+Q810,Jordan,JOR,Q820697,Parliament of Jordan,http://www.parliament.jo,parliament.jo,2026-08-08,wikidata_p194
+Q232,Kazakhstan,KAZ,Q2995409,Parliament of Kazakhstan,http://www.parlam.kz,parlam.kz,2026-08-08,wikidata_p194
+Q114,Kenya,KEN,Q14468380,Parliament of Kenya,http://www.parliament.go.ke/,parliament.go.ke,2026-08-08,wikidata_p194
+Q756617,Kingdom of Denmark,,Q209151,Folketing,https://ft.dk,ft.dk,2026-08-08,wikidata_p194
+Q756617,Kingdom of Denmark,,Q209151,Folketing,https://thedanishparliament.dk,thedanishparliament.dk,2026-08-08,wikidata_p194
+Q756617,Kingdom of Denmark,,Q209151,Folketing,https://www.folkatingid.dk,folkatingid.dk,2026-08-08,wikidata_p194
+Q756617,Kingdom of Denmark,,Q209151,Folketing,https://www.folketingi.dk,folketingi.dk,2026-08-08,wikidata_p194
+Q710,Kiribati,KIR,Q1281107,House of Assembly of Kiribati,http://www.parliament.gov.ki/,parliament.gov.ki,2026-08-08,wikidata_p194
+Q1246,Kosovo,XKS,Q1246562,Assembly of the Republic of Kosovo,https://www.kuvendikosoves.org/,kuvendikosoves.org,2026-08-08,wikidata_p194
+Q817,Kuwait,KWT,Q1139228,National Assembly of Kuwait,http://kna.kw/,kna.kw,2026-08-08,wikidata_p194
+Q813,Kyrgyzstan,KGZ,Q578193,Supreme Council,http://www.kenesh.kg/,kenesh.kg,2026-08-08,wikidata_p194
+Q819,Laos,LAO,Q1188525,National Assembly,http://www.na.gov.la/,na.gov.la,2026-08-08,wikidata_p194
+Q211,Latvia,LVA,Q822919,Saeima,https://www.saeima.lv/,saeima.lv,2026-08-08,wikidata_p194
+Q822,Lebanon,LBN,Q1422275,Parliament of Lebanon,https://www.lp.gov.lb/,lp.gov.lb,2026-08-08,wikidata_p194
+Q1013,Lesotho,LSO,Q4345419,Parliament of Lesotho,https://parliament.ls/,parliament.ls,2026-08-08,wikidata_p194
+Q1014,Liberia,LBR,Q4345418,Legislature of Liberia,,,2026-08-08,wikidata_p194
+Q1016,Libya,LBY,Q22120968,High Council of State,,,2026-08-08,wikidata_p194
+Q1016,Libya,LBY,Q17443556,House of Representatives,https://parliament.ly,parliament.ly,2026-08-08,wikidata_p194
+Q347,Liechtenstein,LIE,Q1149644,Landtag of Liechtenstein,https://www.landtag.li/,landtag.li,2026-08-08,wikidata_p194
+Q37,Lithuania,LTU,Q374152,Seimas,https://www.lrs.lt/,lrs.lt,2026-08-08,wikidata_p194
+Q32,Luxembourg,LUX,Q517449,Chamber of Deputies,https://www.chd.lu/,chd.lu,2026-08-08,wikidata_p194
+Q1019,Madagascar,MDG,Q3919000,Parliament of Madagascar,,,2026-08-08,wikidata_p194
+Q1020,Malawi,MWI,Q1577811,National Assembly,http://www.parliament.gov.mw/,parliament.gov.mw,2026-08-08,wikidata_p194
+Q833,Malaysia,MYS,Q2986392,Parliament of Malaysia,http://www.parlimen.gov.my/,parlimen.gov.my,2026-08-08,wikidata_p194
+Q826,Maldives,MDV,Q650066,People's Majlis,https://majlis.gov.mv/,majlis.gov.mv,2026-08-08,wikidata_p194
+Q912,Mali,MLI,Q1138071,National Assembly,http://www.assemblee-nationale.ml/,assemblee-nationale.ml,2026-08-08,wikidata_p194
+Q233,Malta,MLT,Q1817866,Parliament of Malta,https://www.parlament.mt/,parlament.mt,2026-08-08,wikidata_p194
+Q709,Marshall Islands,MHL,Q1280186,Legislature of the Marshall Islands,https://rmiparliament.org/,rmiparliament.org,2026-08-08,wikidata_p194
+Q1025,Mauritania,MRT,Q1138935,National Assembly,https://assembleenationale.mr/,assembleenationale.mr,2026-08-08,wikidata_p194
+Q1027,Mauritius,MUS,Q1854129,National Assembly of Mauritius,https://mauritiusassembly.govmu.org/,mauritiusassembly.govmu.org,2026-08-08,wikidata_p194
+Q96,Mexico,MEX,Q1484825,Congress of the Union,,,2026-08-08,wikidata_p194
+Q217,Moldova,MDA,Q555809,Parliament of the Republic of Moldova,https://parlament.md/,parlament.md,2026-08-08,wikidata_p194
+Q235,Monaco,MCO,Q1127198,National Council,https://www.conseil-national.mc/,conseil-national.mc,2026-08-08,wikidata_p194
+Q711,Mongolia,MNG,Q1544714,State Great Khural,https://www.parliament.mn/,parliament.mn,2026-08-08,wikidata_p194
+Q236,Montenegro,MNE,Q1579497,Parliament of Montenegro,https://www.skupstina.me/,skupstina.me,2026-08-08,wikidata_p194
+Q1028,Morocco,MAR,Q3004884,Parliament of Morocco,https://www.parlement.ma/,parlement.ma,2026-08-08,wikidata_p194
+Q1029,Mozambique,MOZ,Q1848595,Assembly of the Republic,https://www.parlamento.mz/,parlamento.mz,2026-08-08,wikidata_p194
+Q836,Myanmar,MMR,Q3363019,Assembly of the Union,http://www.pyithuhluttaw.gov.mm/,pyithuhluttaw.gov.mm,2026-08-08,wikidata_p194
+Q1030,Namibia,NAM,Q4167580,Parliament of Namibia,https://www.parliament.na/,parliament.na,2026-08-08,wikidata_p194
+Q697,Naoero,NRU,Q1972029,Parliament of Nauru,http://naurugov.nr/parliament-of-nauru.aspx,naurugov.nr,2026-08-08,wikidata_p194
+Q837,Nepal,NPL,Q3896143,Parliament of Nepal,https://www.parliament.gov.np/,parliament.gov.np,2026-08-08,wikidata_p194
+Q664,New Zealand,NZL,Q1520966,New Zealand Parliament,https://www.parliament.nz/,parliament.nz,2026-08-08,wikidata_p194
+Q811,Nicaragua,NIC,Q1969591,Asamblea Nacional de Nicaragua,https://www.asamblea.gob.ni/,asamblea.gob.ni,2026-08-08,wikidata_p194
+Q1032,Niger,NER,Q1969585,National Assembly,http://www.assemblee.ne,assemblee.ne,2026-08-08,wikidata_p194
+Q1033,Nigeria,NGA,Q2635070,National Assembly of Nigeria,https://nass.gov.ng/,nass.gov.ng,2026-08-08,wikidata_p194
+Q423,North Korea,PRK,Q714698,Supreme People's Assembly,,,2026-08-08,wikidata_p194
+Q221,North Macedonia,MKD,Q1258164,Assembly of North Macedonia,https://www.sobranie.mk/,sobranie.mk,2026-08-08,wikidata_p194
+Q20,Norway,NOR,Q109016,Stortinget,https://stortinget.no,stortinget.no,2026-08-08,wikidata_p194
+Q842,Oman,OMN,Q5176472,Council of Oman,,,2026-08-08,wikidata_p194
+Q843,Pakistan,PAK,Q2665089,Parliament of Pakistan,,,2026-08-08,wikidata_p194
+Q695,Palau,PLW,Q1384462,Palau National Congress,http://www.palauoek.com/,palauoek.com,2026-08-08,wikidata_p194
+Q219060,Palestine,PSE,Q339033,Palestinian Legislative Council,https://pal-plc.org,pal-plc.org,2026-08-08,wikidata_p194
+Q219060,Palestine,PSE,Q339033,Palestinian Legislative Council,https://plc.ps,plc.ps,2026-08-08,wikidata_p194
+Q804,Panama,PAN,Q1368588,National Assembly of Panama,http://www.asamblea.gob.pa,asamblea.gob.pa,2026-08-08,wikidata_p194
+Q691,Papua New Guinea,PNG,Q24563,National Parliament of Papua New Guinea,http://www.parliament.gov.pg,parliament.gov.pg,2026-08-08,wikidata_p194
+Q733,Paraguay,PRY,Q2511660,Congress of Paraguay,http://www.congreso.gov.py/,congreso.gov.py,2026-08-08,wikidata_p194
+Q148,People's Republic of China,CHN,Q19211,National People's Congress,http://en.npc.gov.cn.cdurl.cn/,en.npc.gov.cn.cdurl.cn,2026-08-08,wikidata_p194
+Q148,People's Republic of China,CHN,Q19211,National People's Congress,http://www.npc.gov.cn/,npc.gov.cn,2026-08-08,wikidata_p194
+Q419,Peru,PER,Q1357543,Congress of the Republic of Peru,http://www.congreso.gob.pe/,congreso.gob.pe,2026-08-08,wikidata_p194
+Q928,Philippines,PHL,Q1542985,Congress of the Philippines,,,2026-08-08,wikidata_p194
+Q36,Poland,POL,Q2102558,Parliament of Poland,,,2026-08-08,wikidata_p194
+Q45,Portugal,PRT,Q740564,Assembly of the Republic,https://www.parlamento.pt/,parlamento.pt,2026-08-08,wikidata_p194
+Q846,Qatar,QAT,Q818691,Consultative Assembly of Qatar,https://www.shura.qa/,shura.qa,2026-08-08,wikidata_p194
+Q971,Republic of the Congo,COG,Q4345421,Parliament of the Republic of the Congo,,,2026-08-08,wikidata_p194
+Q218,Romania,ROU,Q1813360,Parliament of Romania,http://www.parlament.ro/,parlament.ro,2026-08-08,wikidata_p194
+Q159,Russia,RUS,Q457869,Federal Assembly of the Russian Federation,http://www.gov.ru/main/page7.html,gov.ru,2026-08-08,wikidata_p194
+Q1037,Rwanda,RWA,Q4162795,Parliament of Rwanda,https://www.parliament.gov.rw/,parliament.gov.rw,2026-08-08,wikidata_p194
+Q763,Saint Kitts and Nevis,KNA,Q654504,National Assembly,https://www.parliament.gov.kn/,parliament.gov.kn,2026-08-08,wikidata_p194
+Q760,Saint Lucia,LCA,Q1563736,Parliament of Saint Lucia,https://parliament.govt.lc/,parliament.govt.lc,2026-08-08,wikidata_p194
+Q757,Saint Vincent and the Grenadines,VCT,Q1138357,House of Assembly of Saint Vincent and the Grenadines,https://assembly.gov.vc/,assembly.gov.vc,2026-08-08,wikidata_p194
+Q683,Samoa,WSM,Q1269555,Legislative Assembly of Samoa,https://www.palemene.ws,palemene.ws,2026-08-08,wikidata_p194
+Q238,San Marino,SMR,Q817979,Grand and General Council,https://www.consigliograndeegenerale.sm/,consigliograndeegenerale.sm,2026-08-08,wikidata_p194
+Q851,Saudi Arabia,SAU,Q62399316,Government of Saudi Arabia,,,2026-08-08,wikidata_p194
+Q1041,Senegal,SEN,Q1853640,National Assembly,http://www.assemblee-nationale.sn,assemblee-nationale.sn,2026-08-08,wikidata_p194
+Q403,Serbia,SRB,Q920222,National Assembly of Serbia,http://www.parlament.gov.rs/,parlament.gov.rs,2026-08-08,wikidata_p194
+Q1042,Seychelles,SYC,Q676484,National Assembly of Seychelles,https://www.nationalassembly.sc/,nationalassembly.sc,2026-08-08,wikidata_p194
+Q1044,Sierra Leone,SLE,Q1138130,Parliament of Sierra Leone,https://www.parliament.gov.sl/,parliament.gov.sl,2026-08-08,wikidata_p194
+Q334,Singapore,SGP,Q1517231,Parliament of Singapore,https://www.parliament.gov.sg/,parliament.gov.sg,2026-08-08,wikidata_p194
+Q214,Slovakia,SVK,Q1139204,National Council of the Slovak Republic,http://www.nrsr.sk,nrsr.sk,2026-08-08,wikidata_p194
+Q215,Slovenia,SVN,Q1288169,Slovenian Parliament,http://www.dz-rs.si/,dz-rs.si,2026-08-08,wikidata_p194
+Q685,Solomon Islands,SLB,Q727851,National Parliament of Solomon Islands,http://www.parliament.gov.sb/,parliament.gov.sb,2026-08-08,wikidata_p194
+Q1045,Somalia,SOM,Q176597,Federal Parliament of Somalia,http://www.parliament.gov.so/,parliament.gov.so,2026-08-08,wikidata_p194
+Q258,South Africa,ZAF,Q2185780,Parliament of South Africa,https://www.parliament.gov.za/,parliament.gov.za,2026-08-08,wikidata_p194
+Q884,South Korea,KOR,Q494162,National Assembly,https://assembly.go.kr/,assembly.go.kr,2026-08-08,wikidata_p194
+Q958,South Sudan,SSD,Q5018721,National Legislature of South Sudan,,,2026-08-08,wikidata_p194
+Q29,Spain,ESP,Q219692,Cortes Generales,http://www.cortesgenerales.es/,cortesgenerales.es,2026-08-08,wikidata_p194
+Q854,Sri Lanka,LKA,Q1450753,Parliament of Sri Lanka,http://www.parliament.lk/,parliament.lk,2026-08-08,wikidata_p194
+Q1049,Sudan,SDN,Q4902948,National Legislature,,,2026-08-08,wikidata_p194
+Q730,Suriname,SUR,Q1760847,National Assembly,https://www.dna.sr/,dna.sr,2026-08-08,wikidata_p194
+Q34,Sweden,SWE,Q272930,Parliament of Sweden,https://www.riksdagen.se,riksdagen.se,2026-08-08,wikidata_p194
+Q39,Switzerland,CHE,Q684719,Federal Assembly of Switzerland,https://www.parlament.ch,parlament.ch,2026-08-08,wikidata_p194
+Q858,Syria,SYR,Q1372196,People's Assembly of Syria,http://www.parliament.gov.sy,parliament.gov.sy,2026-08-08,wikidata_p194
+Q1039,São Tomé and Príncipe,STP,Q1267064,Asamblea Nacional de Santo Tomé y Príncipe,http://www.parlamento.st,parlamento.st,2026-08-08,wikidata_p194
+Q865,Taiwan,TWN,Q715869,Legislative Yuan,https://www.ly.gov.tw/,ly.gov.tw,2026-08-08,wikidata_p194
+Q863,Tajikistan,TJK,Q2011165,Supreme Assembly,https://parlament.tj/,parlament.tj,2026-08-08,wikidata_p194
+Q924,Tanzania,TZA,Q1138299,National Assembly,https://www.parliament.go.tz/,parliament.go.tz,2026-08-08,wikidata_p194
+Q869,Thailand,THA,Q1368318,National Assembly of Thailand,http://www.parliament.go.th/,parliament.go.th,2026-08-08,wikidata_p194
+Q778,The Bahamas,BHS,Q1572486,Parliament of The Bahamas,,,2026-08-08,wikidata_p194
+Q1005,The Gambia,GMB,Q1427127,National Assembly of The Gambia,https://www.assembly.gm/,assembly.gm,2026-08-08,wikidata_p194
+Q574,Timor-Leste,TLS,Q680806,National Parliament,https://www.parlamento.tl/,parlamento.tl,2026-08-08,wikidata_p194
+Q945,Togo,TGO,Q1969578,National Assembly,http://www.assemblee-nationale.tg,assemblee-nationale.tg,2026-08-08,wikidata_p194
+Q678,Tonga,TON,Q1287831,Legislative Assembly of Tonga,https://parliament.gov.to/,parliament.gov.to,2026-08-08,wikidata_p194
+Q754,Trinidad and Tobago,TTO,Q7138943,Parliament of Trinidad and Tobago,http://www.ttparliament.org/,ttparliament.org,2026-08-08,wikidata_p194
+Q948,Tunisia,TUN,Q18342090,Assembly of the Representatives of the People,,,2026-08-08,wikidata_p194
+Q43,Turkey,TUR,Q274918,Grand National Assembly of Turkey,https://global.tbmm.gov.tr/,global.tbmm.gov.tr,2026-08-08,wikidata_p194
+Q43,Turkey,TUR,Q274918,Grand National Assembly of Turkey,https://www.tbmm.gov.tr/,tbmm.gov.tr,2026-08-08,wikidata_p194
+Q874,Turkmenistan,TKM,Q106506537,National Council of Turkmenistan,,,2026-08-08,wikidata_p194
+Q672,Tuvalu,TUV,Q897278,Parliament of Tuvalu,,,2026-08-08,wikidata_p194
+Q1036,Uganda,UGA,Q2052850,Parliament of Uganda,https://www.parliament.go.ug/,parliament.go.ug,2026-08-08,wikidata_p194
+Q212,Ukraine,UKR,Q176296,Verkhovna Rada,https://rada.gov.ua,rada.gov.ua,2026-08-08,wikidata_p194
+Q878,United Arab Emirates,ARE,Q5440456,Federal Supreme Council,https://uaecabinet.ae/en/federal-supreme-council,uaecabinet.ae,2026-08-08,wikidata_p194
+Q145,United Kingdom,GBR,Q11010,Parliament of the United Kingdom,https://www.parliament.uk/,parliament.uk,2026-08-08,wikidata_p194
+Q30,United States,USA,Q11268,United States Congress,https://www.congress.gov,congress.gov,2026-08-08,wikidata_p194
+Q77,Uruguay,URY,Q1501988,General Assembly of Uruguay,https://parlamento.gub.uy/,parlamento.gub.uy,2026-08-08,wikidata_p194
+Q265,Uzbekistan,UZB,Q1583318,Oliy Majlis,,,2026-08-08,wikidata_p194
+Q686,Vanuatu,VUT,Q764201,Parliament of Vanuatu,https://parliament.gov.vu/,parliament.gov.vu,2026-08-08,wikidata_p194
+Q237,Vatican City,VAT,Q7478146,Pontifical Commission for the Vatican City State,https://www.vaticanstate.va/,vaticanstate.va,2026-08-08,wikidata_p194
+Q717,Venezuela,VEN,Q1585014,National Assembly,https://asambleanacionalvenezuela.org,asambleanacionalvenezuela.org,2026-08-08,wikidata_p194
+Q881,Vietnam,VNM,Q1765001,National Assembly of Vietnam,https://quochoi.vn/,quochoi.vn,2026-08-08,wikidata_p194
+Q805,Yemen,YEM,Q34665845,Parliament of Yemen,http://yemenparliament.gov.ye/,yemenparliament.gov.ye,2026-08-08,wikidata_p194
+Q953,Zambia,ZMB,Q1784088,National Assembly,https://www.parliament.gov.zm/,parliament.gov.zm,2026-08-08,wikidata_p194
+Q954,Zimbabwe,ZWE,Q2083905,Parliament of Zimbabwe,https://www.parlzim.gov.zw/,parlzim.gov.zw,2026-08-08,wikidata_p194

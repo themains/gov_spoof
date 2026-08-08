@@ -1,0 +1,10 @@
+venv*
+.venv*
+__pycache__/
+*.pyc
+.DS_Store
+
+# Raw snapshots: kept locally for provenance, not redistributed. EuRepoC is
+# CC-BY-NC and pinned by DOI in its collector; Wikidata and DNS results are
+# regenerable from the collectors.
+data/raw/
