@@ -83,19 +83,46 @@ def working_resolver():
     except Exception as exc:  # noqa: BLE001
         sys.exit(f"no working DNS resolver: {exc}")
 
-# Errors that mean "we failed to ask", as opposed to "the answer is no".
+# checkdmarc signals every negative outcome identically -- valid=False plus a
+# message -- so the message text is the only thing separating four very
+# different facts.
+#
+# The first version of this file assumed an EMPTY error meant "publishes no
+# record". checkdmarc does not behave that way: it returns a sentence saying so.
+# The result was 55 legislatures that publish no DMARC at all being recorded as
+# publishing a BROKEN one -- the same category confusion this wrapper exists to
+# prevent, reached from the other side. Caught by noticing that 62 of 165
+# "invalid" was implausibly high and reading the actual strings.
+#
+# Order matters: "The domain does not exist" also contains "does not exist", so
+# NXDOMAIN is tested before ABSENT.
+
+# The domain itself does not resolve. Not a DMARC fact at all -- it means the
+# FRAME is stale: Wikidata lists a website that has since gone away.
+NXDOMAIN = ("the domain does not exist",)
+
+# The domain resolves and publishes no such record. A real, measurable finding.
+ABSENT = ("record does not exist", "no dmarc record", "no spf record",
+          "does not have a dmarc record", "does not have an spf record")
+
+# We failed to ask. Not a finding; missing data.
 TRANSIENT = ("timed out", "resolution lifetime expired", "no nameservers",
-             "connection", "temporary", "batch error")
+             "nameservers failed to answer", "connection", "temporary",
+             "batch error")
 
 
 def status_of(block):
-    """Classify a checkdmarc sub-result as ok / absent / lookup_failed.
+    """Classify a checkdmarc sub-result.
 
-    checkdmarc reports both a missing record and a failed lookup as valid=False
-    with a message in `error`. Separating them is the whole point of this
-    wrapper, so the classification is explicit and errors that match nothing
-    known fall through to lookup_failed rather than being assumed absent --
-    failing toward "we do not know" is the safe direction.
+    Returns one of:
+      ok            a valid record is published
+      absent        the domain resolves and publishes none
+      invalid       a record is published but is malformed -- they tried and failed
+      nxdomain      the domain does not resolve; a frame problem, not a posture one
+      lookup_failed we could not find out; treat as missing
+
+    Anything unrecognised falls through to lookup_failed rather than to absent,
+    so an unfamiliar error can never be mistaken for a finding.
     """
     if not isinstance(block, dict):
         return "lookup_failed", None
@@ -104,10 +131,14 @@ def status_of(block):
     err = str(block.get("error") or "").lower()
     if not err:
         return "absent", None
+    if any(t in err for t in NXDOMAIN):
+        return "nxdomain", block.get("error")
     if any(t in err for t in TRANSIENT):
         return "lookup_failed", block.get("error")
-    # A syntactically broken record is present-but-wrong, which is a different
-    # and interesting state: the domain owner tried and failed.
+    if any(t in err for t in ABSENT):
+        return "absent", block.get("error")
+    # Published but malformed: a distinct and interesting state, and a different
+    # remedy from never having tried.
     return "invalid", block.get("error")
 
 
@@ -152,8 +183,27 @@ def domains_from_frame():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None,
-                    help="only the N largest domains; for a pilot run")
+                    help="only the first N domains; for a pilot run")
+    ap.add_argument("--reparse", action="store_true",
+                    help="re-derive the table from the newest raw snapshot "
+                         "without re-querying DNS. This is why the snapshot is "
+                         "written before anything parses it: a classification "
+                         "bug costs a second, not another full sweep.")
     args = ap.parse_args()
+
+    dom = domains_from_frame()
+
+    if args.reparse:
+        import glob
+        snaps = sorted(glob.glob(os.path.join(RAW, "checkdmarc_*.json")))
+        if not snaps:
+            sys.exit(f"no snapshot in {RAW}; run without --reparse first")
+        with open(snaps[-1]) as fh:
+            results = json.load(fh)
+        today = os.path.basename(snaps[-1])[11:21]
+        ns_label = "from-snapshot"
+        print(f"==> re-parsing {os.path.basename(snaps[-1])} ({len(results)} domains)")
+        return emit(results, dom, today, ns_label)
 
     try:
         from checkdmarc import check_domains
@@ -162,8 +212,6 @@ def main():
 
     resolver, ns_label = working_resolver()
     print(f"==> resolver: {ns_label}")
-
-    dom = domains_from_frame()
     if args.limit:
         dom = dom.head(args.limit)
     print(f"==> checking {len(dom):,} domains")
@@ -205,6 +253,13 @@ def main():
     with open(os.path.join(RAW, f"checkdmarc_{today}.json"), "w") as fh:
         json.dump(results, fh, indent=1, default=str)
 
+    return emit(results, dom, today, ns_label)
+
+
+def emit(results, dom, today, ns_label):
+    """Turn raw checkdmarc output into the table. Split out of main() so
+    --reparse can re-derive it from a snapshot without re-querying DNS.
+    """
     rows = []
     for res in results:
         dmarc, spf = res.get("dmarc", {}), res.get("spf", {})
@@ -241,7 +296,6 @@ def main():
     print(f"\n  {failed} of {n} DMARC lookups FAILED and are recorded as missing,")
     print("  not as 'no DMARC'. Treat them as missing downstream.")
     print(f"  wrote {OUT}")
-
 
 if __name__ == "__main__":
     main()

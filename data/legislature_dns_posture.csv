@@ -1,0 +1,168 @@
+domain,dmarc_status,dmarc_policy,dmarc_error,spf_status,spf_qualifier,spf_error,mta_sts,dnssec,checked_date,resolver,source_id,country,cc3,legislature,legislature_qid
+aph.gov.au,ok,reject,,ok,hard_fail,,invalid,False,2026-08-08,from-snapshot,dns_posture,Australia,AUS,Parliament of Australia,Q382118
+apn-dz.org,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Algeria,DZA,Parliament of Algeria,Q3142337
+assemblee-nationale.bj,absent,,A DMARC record does not exist.,invalid,soft_fail,assemblee-nationale.bj: Expected whitespace before 'all' at position 42 (marked with ➞) in: v=spf1 include:mail.assemblee-nationale.bj➞~all,absent,False,2026-08-08,from-snapshot,dns_posture,Benin,BEN,National Assembly,Q1969527
+assemblee-nationale.td,lookup_failed,,All nameservers failed to answer the query _dmarc.assemblee-nationale.td. IN TXT: Server Do53:192.0.2.42@53 answered The DNS operation timed out.; Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,,All nameservers failed to answer the query assemblee-nationale.td. IN TXT: Server Do53:192.0.2.42@53 answered The DNS operation timed out.; Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,False,2026-08-08,from-snapshot,dns_posture,Chad,TCD,National Assembly,Q1599346
+assembleenationale.bf,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Burkina Faso,BFA,National Assembly of Burkina Faso,Q619238
+barbadosparliament.com,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Barbados,BRB,Parliament of Barbados,Q2565909
+congreso.cl,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Chile,CHL,National Congress of Chile,Q1968468
+congreso.gob.ar,ok,reject,,ok,hard_fail,,lookup_failed,False,2026-08-08,from-snapshot,dns_posture,Argentina,ARG,Argentine National Congress,Q646190
+congressonacional.leg.br,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Brazil,BRA,National Congress of Brazil,Q949699
+consellgeneral.ad,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Andorra,AND,General Council of Andorra,Q24824
+councils.gov.bn,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Brunei,BRN,Legislative Council of Brunei,Q2396996
+fed-parl.be,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Belgium,BEL,Belgian Federal Parliament,Q1137059
+meclis.gov.az,ok,reject,,ok,no_all,,absent,False,2026-08-08,from-snapshot,dns_posture,Azerbaijan,AZE,National Assembly of Azerbaijan,Q330600
+nationalassembly.gov.bz,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Belize,BLZ,National Assembly,Q1965042
+parl.ca,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Canada,CAN,Parliament of Canada,Q475689
+parlament.al,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Albania,ALB,Parliament of Albania,Q1135960
+parlament.ba,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Bosnia and Herzegovina,BIH,Parliamentary Assembly of Bosnia and Herzegovina,Q2604031
+parlament.gv.at,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Austria,AUT,Austrian Parliament,Q4817650
+parlamento.ao,ok,reject,,ok,soft_fail,,invalid,False,2026-08-08,from-snapshot,dns_posture,Angola,AGO,National Assembly of Angola,Q1969479
+parlamento.cv,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Cape Verde,CPV,National Assembly of Cape Verde,Q1718790
+parliament.am,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Armenia,ARM,National Assembly of Armenia,Q1337463
+parliament.bg,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Bulgaria,BGR,National Assembly of Bulgaria,Q639704
+parliament.bt,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Bhutan,BTN,Parliament of Bhutan,Q2080399
+parliament.gov.bd,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Bangladesh,BGD,Jatiya Sangsad,Q1684080
+parliament.gov.bw,ok,reject,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Botswana,BWA,National Assembly of Botswana,Q859658
+asamblea.go.cr,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Costa Rica,CRI,Legislative Assembly of Costa Rica,Q1386962
+asamblea.gob.sv,invalid,,Multiple DMARC policy records are not permitted - https://www.rfc-editor.org/rfc/rfc9989.html#section-5.6.1,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,El Salvador,SLV,Legislative Assembly of El Salvador,Q1812873
+asambleanacional.gob.ec,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Ecuador,ECU,National Assembly,Q1319595
+assemblee-nationale.dj,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Djibouti,DJI,National Assembly,Q1139363
+bundesrat.de,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Germany,DEU,Bundesrat,Q146138
+bundestag.de,ok,reject,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Germany,DEU,German Bundestag,Q154797
+cfsm.gov.fm,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Federated States of Micronesia,FSM,Congress of the Federated States of Micronesia,Q1287548
+congreso.gob.gt,ok,quarantine,,ok,hard_fail,,invalid,False,2026-08-08,from-snapshot,dns_posture,Guatemala,GTM,Congress of the Republic of Guatemala,Q1136026
+congresonacional.hn,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Honduras,HND,National Congress of Honduras,Q1415847
+eduskunta.fi,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Finland,FIN,Parliament of Finland,Q643412
+grenadaparliament.gd,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Grenada,GRD,Parliament of Grenada,Q1253647
+hellenicparliament.gr,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Greece,GRC,Hellenic Parliament,Q477089
+houseofassembly.gov.dm,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Dominica,DMA,House of Assembly of Dominica,Q1297237
+leparlementhaitien.info,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Haiti,HTI,Parliament of Haiti,Q742110
+parlamento.gw,absent,,A DMARC record does not exist.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Guinea-Bissau,GNB,National People's Assembly,Q740533
+parlamentocubano.gob.cu,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Cuba,CUB,National Assembly of People's Power,Q720753
+parlement.fr,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,France,FRA,French Parliament,Q632552
+parliament.cy,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Cyprus,CYP,House of Representatives,Q1112381
+parliament.ge,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Georgia,GEO,Parliament of Georgia,Q1417210
+parliament.gh,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Ghana,GHA,Parliament of Ghana,Q1807513
+parliament.gov.fj,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Fiji,FJI,Parliament of Fiji,Q4345425
+parliament.gov.gy,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Guyana,GUY,National Assembly,Q1512579
+parliament.gov.sz,ok,none,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Eswatini,SWZ,Parliament of Eswatini,Q7138942
+riigikogu.ee,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Estonia,EST,Riigikogu,Q217799
+sabor.hr,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Croatia,HRV,Parliament of Croatia,Q371576
+althingi.is,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Iceland,ISL,Althing,Q131279
+folkatingid.dk,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Kingdom of Denmark,,Folketing,Q209151
+folketingi.dk,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Kingdom of Denmark,,Folketing,Q209151
+ft.dk,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kingdom of Denmark,,Folketing,Q209151
+japarliament.gov.jm,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Jamaica,JAM,Parliament of Jamaica,Q122635
+kenesh.kg,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kyrgyzstan,KGZ,Supreme Council,Q578193
+kna.kw,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kuwait,KWT,National Assembly of Kuwait,Q1139228
+kuvendikosoves.org,absent,,A DMARC record does not exist.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kosovo,XKS,Assembly of the Republic of Kosovo,Q1246562
+lp.gov.lb,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Lebanon,LBN,Parliament of Lebanon,Q1422275
+main.knesset.gov.il,ok,none,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Israel,ISR,The Knesset,Q133396
+mpr.go.id,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Indonesia,IDN,People's Consultative Assembly,Q818711
+na.gov.la,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Laos,LAO,National Assembly,Q1188525
+oireachtas.ie,ok,reject,,ok,hard_fail,,ok,False,2026-08-08,from-snapshot,dns_posture,Ireland,IRL,Oireachtas,Q129821
+parlam.kz,absent,,A DMARC record does not exist.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kazakhstan,KAZ,Parliament of Kazakhstan,Q2995409
+parlament.hu,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Hungary,HUN,National Assembly,Q648716
+parlamento.it,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Italy,ITA,Italian Parliament,Q1117578
+parliament.go.ke,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kenya,KEN,Parliament of Kenya,Q14468380
+parliament.gov.ki,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Kiribati,KIR,House of Assembly of Kiribati,Q1281107
+parliament.iq,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Iraq,IRQ,Council of Representatives of Iraq,Q1973075
+parliament.jo,nxdomain,,The domain does not exist.,nxdomain,,The domain does not exist.,nxdomain,False,2026-08-08,from-snapshot,dns_posture,Jordan,JOR,Parliament of Jordan,Q820697
+rc.majlis.ir,ok,quarantine,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Iran,IRN,Islamic Consultative Assembly,Q378605
+saeima.lv,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Latvia,LVA,Saeima,Q822919
+sangiin.go.jp,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Japan,JPN,National Diet,Q202384
+sansad.in,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,India,IND,Parliament of India,Q695252
+thedanishparliament.dk,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Kingdom of Denmark,,Folketing,Q209151
+asamblea.gob.ni,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Nicaragua,NIC,Asamblea Nacional de Nicaragua,Q1969591
+assemblee-nationale.ml,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Mali,MLI,National Assembly,Q1138071
+assembleenationale.mr,lookup_failed,,All nameservers failed to answer the query _dmarc.assembleenationale.mr. IN TXT: Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,,All nameservers failed to answer the query assembleenationale.mr. IN TXT: Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,False,2026-08-08,from-snapshot,dns_posture,Mauritania,MRT,National Assembly,Q1138935
+chd.lu,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Luxembourg,LUX,Chamber of Deputies,Q517449
+conseil-national.mc,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Monaco,MCO,National Council,Q1127198
+landtag.li,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Liechtenstein,LIE,Landtag of Liechtenstein,Q1149644
+lrs.lt,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Lithuania,LTU,Seimas,Q374152
+majlis.gov.mv,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Maldives,MDV,People's Majlis,Q650066
+mauritiusassembly.govmu.org,ok,reject,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Mauritius,MUS,National Assembly of Mauritius,Q1854129
+naurugov.nr,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Naoero,NRU,Parliament of Nauru,Q1972029
+parlament.md,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Moldova,MDA,Parliament of the Republic of Moldova,Q555809
+parlament.mt,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Malta,MLT,Parliament of Malta,Q1817866
+parlamento.mz,lookup_failed,,The resolution lifetime expired after 5.417 seconds: Server Do53:192.0.2.42@53 answered The DNS operation timed out.; Server Do53:192.0.2.42@53 answered The DNS operation timed out.; Server Do53:192.0.2.42@53 answered The DNS operation timed out.,invalid,soft_fail,Parsing the SPF record requires 14/10 maximum DNS lookups - (RFC 7208 § 4.6.4),absent,False,2026-08-08,from-snapshot,dns_posture,Mozambique,MOZ,Assembly of the Republic,Q1848595
+parlement.ma,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Morocco,MAR,Parliament of Morocco,Q3004884
+parliament.gov.mw,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Malawi,MWI,National Assembly,Q1577811
+parliament.gov.np,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Nepal,NPL,Parliament of Nepal,Q3896143
+parliament.ls,absent,,A DMARC record does not exist.,ok,neutral,,absent,False,2026-08-08,from-snapshot,dns_posture,Lesotho,LSO,Parliament of Lesotho,Q4345419
+parliament.ly,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Libya,LBY,House of Representatives,Q17443556
+parliament.mn,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Mongolia,MNG,State Great Khural,Q1544714
+parliament.na,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Namibia,NAM,Parliament of Namibia,Q4167580
+parliament.nz,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,New Zealand,NZL,New Zealand Parliament,Q1520966
+parlimen.gov.my,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Malaysia,MYS,Parliament of Malaysia,Q2986392
+pyithuhluttaw.gov.mm,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Myanmar,MMR,Assembly of the Union,Q3363019
+rmiparliament.org,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Marshall Islands,MHL,Legislature of the Marshall Islands,Q1280186
+skupstina.me,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Montenegro,MNE,Parliament of Montenegro,Q1579497
+asamblea.gob.pa,ok,reject,,ok,no_all,,ok,False,2026-08-08,from-snapshot,dns_posture,Panama,PAN,National Assembly of Panama,Q1368588
+assemblee-nationale.sn,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,lookup_failed,False,2026-08-08,from-snapshot,dns_posture,Senegal,SEN,National Assembly,Q1853640
+assemblee.ne,lookup_failed,,All nameservers failed to answer the query _dmarc.assemblee.ne. IN TXT: Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,,All nameservers failed to answer the query assemblee.ne. IN TXT: Server Do53:192.0.2.42@53 answered The DNS operation timed out.; Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,False,2026-08-08,from-snapshot,dns_posture,Niger,NER,National Assembly,Q1969585
+assembly.gov.vc,ok,reject,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Saint Vincent and the Grenadines,VCT,House of Assembly of Saint Vincent and the Grenadines,Q1138357
+congreso.gob.pe,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Peru,PER,Congress of the Republic of Peru,Q1357543
+congreso.gov.py,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Paraguay,PRY,Congress of Paraguay,Q2511660
+consigliograndeegenerale.sm,absent,,A DMARC record does not exist.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,San Marino,SMR,Grand and General Council,Q817979
+en.npc.gov.cn.cdurl.cn,absent,,A DMARC record does not exist for this domain or its parent domains.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,People's Republic of China,CHN,National People's Congress,Q19211
+gov.ru,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Russia,RUS,Federal Assembly of the Russian Federation,Q457869
+nass.gov.ng,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Nigeria,NGA,National Assembly of Nigeria,Q2635070
+npc.gov.cn,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,People's Republic of China,CHN,National People's Congress,Q19211
+pal-plc.org,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Palestine,PSE,Palestinian Legislative Council,Q339033
+palauoek.com,nxdomain,,The domain does not exist.,nxdomain,,The domain does not exist.,nxdomain,False,2026-08-08,from-snapshot,dns_posture,Palau,PLW,Palau National Congress,Q1384462
+palemene.ws,invalid,,"Unrelated TXT records were discovered. These should be removed, as some receivers may not expect to find unrelated TXT records at _dmarc.ws
+
+v=spf1 ip6:fdd0:951e:ede7::/48 -all",ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Samoa,WSM,Legislative Assembly of Samoa,Q1269555
+parlament.gov.rs,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Serbia,SRB,National Assembly of Serbia,Q920222
+parlament.ro,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Romania,ROU,Parliament of Romania,Q1813360
+parlamento.pt,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Portugal,PRT,Assembly of the Republic,Q740564
+parliament.gov.kn,ok,none,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Saint Kitts and Nevis,KNA,National Assembly,Q654504
+parliament.gov.pg,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Papua New Guinea,PNG,National Parliament of Papua New Guinea,Q24563
+parliament.gov.rw,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Rwanda,RWA,Parliament of Rwanda,Q4162795
+parliament.govt.lc,ok,none,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Saint Lucia,LCA,Parliament of Saint Lucia,Q1563736
+plc.ps,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Palestine,PSE,Palestinian Legislative Council,Q339033
+shura.qa,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Qatar,QAT,Consultative Assembly of Qatar,Q818691
+sobranie.mk,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,North Macedonia,MKD,Assembly of North Macedonia,Q1258164
+stortinget.no,ok,reject,,ok,hard_fail,,ok,False,2026-08-08,from-snapshot,dns_posture,Norway,NOR,Stortinget,Q109016
+assemblee-nationale.tg,absent,,A DMARC record does not exist.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Togo,TGO,National Assembly,Q1969578
+assembly.gm,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,The Gambia,GMB,National Assembly of The Gambia,Q1427127
+assembly.go.kr,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,South Korea,KOR,National Assembly,Q494162
+cortesgenerales.es,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Spain,ESP,Cortes Generales,Q219692
+dna.sr,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Suriname,SUR,National Assembly,Q1760847
+dz-rs.si,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Slovenia,SVN,Slovenian Parliament,Q1288169
+ly.gov.tw,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Taiwan,TWN,Legislative Yuan,Q715869
+nationalassembly.sc,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Seychelles,SYC,National Assembly of Seychelles,Q676484
+nrsr.sk,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Slovakia,SVK,National Council of the Slovak Republic,Q1139204
+parlament.ch,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Switzerland,CHE,Federal Assembly of Switzerland,Q684719
+parlament.tj,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Tajikistan,TJK,Supreme Assembly,Q2011165
+parlamento.st,absent,,A DMARC record does not exist.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,São Tomé and Príncipe,STP,Asamblea Nacional de Santo Tomé y Príncipe,Q1267064
+parlamento.tl,ok,quarantine,,ok,neutral,,absent,False,2026-08-08,from-snapshot,dns_posture,Timor-Leste,TLS,National Parliament,Q680806
+parliament.go.th,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Thailand,THA,National Assembly of Thailand,Q1368318
+parliament.go.tz,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Tanzania,TZA,National Assembly,Q1138299
+parliament.gov.sb,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Solomon Islands,SLB,National Parliament of Solomon Islands,Q727851
+parliament.gov.sg,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Singapore,SGP,Parliament of Singapore,Q1517231
+parliament.gov.sl,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Sierra Leone,SLE,Parliament of Sierra Leone,Q1138130
+parliament.gov.so,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Somalia,SOM,Federal Parliament of Somalia,Q176597
+parliament.gov.sy,lookup_failed,,All nameservers failed to answer the query _dmarc.parliament.gov.sy. IN TXT: Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,,All nameservers failed to answer the query parliament.gov.sy. IN TXT: Server Do53:192.0.2.42@53 answered SERVFAIL,lookup_failed,False,2026-08-08,from-snapshot,dns_posture,Syria,SYR,People's Assembly of Syria,Q1372196
+parliament.gov.to,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Tonga,TON,Legislative Assembly of Tonga,Q1287831
+parliament.gov.za,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,South Africa,ZAF,Parliament of South Africa,Q2185780
+parliament.lk,ok,none,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Sri Lanka,LKA,Parliament of Sri Lanka,Q1450753
+riksdagen.se,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Sweden,SWE,Parliament of Sweden,Q272930
+ttparliament.org,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Trinidad and Tobago,TTO,Parliament of Trinidad and Tobago,Q7138943
+asambleanacionalvenezuela.org,absent,,A DMARC record does not exist.,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Venezuela,VEN,National Assembly,Q1585014
+congress.gov,ok,reject,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,United States,USA,United States Congress,Q11268
+global.tbmm.gov.tr,ok,quarantine,,absent,,An SPF record does not exist.,absent,False,2026-08-08,from-snapshot,dns_posture,Turkey,TUR,Grand National Assembly of Turkey,Q274918
+parlamento.gub.uy,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Uruguay,URY,General Assembly of Uruguay,Q1501988
+parliament.go.ug,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Uganda,UGA,Parliament of Uganda,Q2052850
+parliament.gov.vu,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Vanuatu,VUT,Parliament of Vanuatu,Q764201
+parliament.gov.zm,ok,reject,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Zambia,ZMB,National Assembly,Q1784088
+parliament.uk,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,United Kingdom,GBR,Parliament of the United Kingdom,Q11010
+parlzim.gov.zw,absent,,A DMARC record does not exist for this domain or its parent domains.,invalid,,The domain has multiple SPF TXT records,absent,False,2026-08-08,from-snapshot,dns_posture,Zimbabwe,ZWE,Parliament of Zimbabwe,Q2083905
+quochoi.vn,ok,quarantine,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Vietnam,VNM,National Assembly of Vietnam,Q1765001
+rada.gov.ua,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Ukraine,UKR,Verkhovna Rada,Q176296
+tbmm.gov.tr,ok,quarantine,,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Turkey,TUR,Grand National Assembly of Turkey,Q274918
+uaecabinet.ae,absent,,A DMARC record does not exist.,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,United Arab Emirates,ARE,Federal Supreme Council,Q5440456
+vaticanstate.va,ok,none,,ok,soft_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Vatican City,VAT,Pontifical Commission for the Vatican City State,Q7478146
+yemenparliament.gov.ye,absent,,A DMARC record does not exist for this domain or its parent domains.,ok,hard_fail,,absent,False,2026-08-08,from-snapshot,dns_posture,Yemen,YEM,Parliament of Yemen,Q34665845
