@@ -1,6 +1,7 @@
-"""Collection adapter: email-authentication posture of national legislatures.
+"""Collection adapter: email-authentication posture of national institutions.
 
-Measures the PHISHING surface of every legislature in the frame. From EuRepoC's
+Measures the PHISHING surface of every national institution in the frame --
+legislature, head-of-state office, executive and highest court. From EuRepoC's
 coded initial-access techniques,
 phishing is the single largest entry vector into political targets at 35.4% --
 more than three times the share attributable to stolen credentials (10.9%),
@@ -52,8 +53,23 @@ OUT = os.path.join(REPO, "data", "institution_dns_posture.csv")
 # `lookup_failed` -- a table of garbage that reads exactly like a finding about
 # parliaments. So the resolver is CHOSEN AT RUNTIME by testing it, and which one
 # was used is recorded in the output.
-PREFERRED_NAMESERVERS = ["1.1.1.1", "8.8.8.8", "9.9.9.9"]
+# The SYSTEM resolver is tried FIRST, then public ones.
+#
+# The reverse order looked more principled -- pinned resolvers make a
+# measurement reproducible rather than dependent on the local network -- and it
+# produced a run where 498 of 523 lookups failed. 1.1.1.1 answered the startup
+# probe, served exactly one batch of 25, then became unreachable, and every
+# subsequent batch died on "no nameservers". A pinned resolver is only
+# reproducible if it stays up; the system resolver here answers in 0.02s and has
+# never dropped. Whichever is used is recorded in every output row.
+PREFERRED_NAMESERVERS = ["system", "1.1.1.1", "8.8.8.8", "9.9.9.9"]
 PROBE = "_dmarc.parliament.uk"
+
+# A run where too many lookups fail is not a measurement, and must not leave
+# behind a file that looks like one. The 498-failure run wrote a perfectly
+# well-formed CSV that would have passed every downstream check while showing
+# 95% of the world's institutions publishing no DMARC.
+MAX_FAILURE_RATE = 0.20
 
 
 def working_resolver():
@@ -68,20 +84,17 @@ def working_resolver():
     import dns.resolver
 
     for ns in PREFERRED_NAMESERVERS:
-        r = dns.resolver.Resolver(configure=False)
-        r.nameservers, r.timeout, r.lifetime = [ns], 3, 3
         try:
+            if ns == "system":
+                r = dns.resolver.Resolver()
+            else:
+                r = dns.resolver.Resolver(configure=False)
+                r.nameservers, r.timeout, r.lifetime = [ns], 3, 3
             r.resolve(PROBE, "TXT")
             return r, ns
         except Exception:  # noqa: BLE001 - unreachable is the only thing that matters
             continue
-
-    r = dns.resolver.Resolver()
-    try:
-        r.resolve(PROBE, "TXT")
-        return r, "system"
-    except Exception as exc:  # noqa: BLE001
-        sys.exit(f"no working DNS resolver: {exc}")
+    sys.exit("no working DNS resolver")
 
 # checkdmarc signals every negative outcome identically -- valid=False plus a
 # message -- so the message text is the only thing separating four very
@@ -176,18 +189,18 @@ def spf_lookups(spf):
 
 
 def domains_from_frame():
-    """One row per legislature domain, from the Wikidata-derived frame.
+    """One row per institution domain, from the Wikidata-derived frame.
 
-    A legislature may publish several domains -- the Folketing has four, one of
+    An institution may publish several domains -- the Folketing has four, one of
     them Faroese and one Greenlandic -- and each is a separate surface to
-    secure, so each is measured. Aggregating to the institution is an analysis
-    decision made later, not a collection one made here.
+    secure, so each is measured. Aggregating to the institution or the country
+    is an analysis decision made later, not a collection one made here.
 
     Legislatures with no published website stay out of the sweep but remain in
     the frame with a null domain, so the denominator of "how many could be
     measured" is not quietly reduced to "how many were".
     """
-    frame = pd.read_csv(os.path.join(REPO, "data", "legislature_domains.csv"))
+    frame = pd.read_csv(os.path.join(REPO, "data", "institution_domains.csv"))
     have = frame[frame.domain.notna()].copy()
     return (
         have[["domain", "country", "cc3", "branch", "body", "body_qid", "sovereign"]]
@@ -247,8 +260,23 @@ def main():
     #
     # Chunked, because a single unhandled resolver error should cost one batch
     # rather than the whole sweep.
+    # The snapshot is written AFTER EVERY BATCH and reloaded on start, so a
+    # killed run resumes instead of starting over. Writing it only at the end --
+    # which is what this did first -- lost two multi-hour sweeps: the design
+    # intent was snapshot-before-parse, but scoped to the whole run rather than
+    # each batch, which protects against a parser bug and not against anything
+    # that stops the process.
+    snap_path = os.path.join(RAW, f"checkdmarc_{today}.json")
     results = []
-    domains = list(dom.domain)
+    if os.path.exists(snap_path):
+        with open(snap_path) as fh:
+            results = json.load(fh)
+        print(f"  resuming: {len(results)} domains already in today's snapshot")
+
+    done = {r.get("domain") for r in results}
+    domains = [d for d in dom.domain if d not in done]
+    if not domains:
+        print("  nothing left to fetch")
     CHUNK = 25
     for i in range(0, len(domains), CHUNK):
         batch = domains[i:i + CHUNK]
@@ -261,14 +289,25 @@ def main():
             r = check_domains(batch, skip_tls=True, resolver=resolver)
             results.extend([r] if isinstance(r, dict) else r)
         except Exception as exc:  # noqa: BLE001 - one bad batch must not end the run
-            print(f"  batch {i}-{i + len(batch)} failed: {type(exc).__name__}: {exc}")
-            for d in batch:
-                results.append({"domain": d, "dmarc": {"valid": False,
-                                                       "error": f"batch error: {exc}"}})
-        print(f"  {min(i + CHUNK, len(domains)):>4}/{len(domains)}", flush=True)
-
-    with open(os.path.join(RAW, f"checkdmarc_{today}.json"), "w") as fh:
-        json.dump(results, fh, indent=1, default=str)
+            # Re-probe before writing the batch off. A resolver that worked at
+            # startup can die mid-run, and treating that as 25 domains with no
+            # DMARC would be a fabricated finding.
+            print(f"  batch {i}-{i + len(batch)} failed ({type(exc).__name__}); re-probing")
+            try:
+                resolver, ns_label = working_resolver()
+                print(f"  resolver now: {ns_label}; retrying batch")
+                r = check_domains(batch, skip_tls=True, resolver=resolver)
+                results.extend([r] if isinstance(r, dict) else r)
+                print(f"  {min(i + CHUNK, len(domains)):>4}/{len(domains)}", flush=True)
+                continue
+            except Exception as exc2:  # noqa: BLE001
+                print(f"  retry also failed: {exc2}")
+                for d in batch:
+                    results.append({"domain": d, "dmarc": {"valid": False,
+                                                           "error": f"batch error: {exc2}"}})
+        with open(snap_path, "w") as fh:
+            json.dump(results, fh, indent=1, default=str)
+        print(f"  {len(results):>4}/{len(dom)} (snapshot saved)", flush=True)
 
     return emit(results, dom, today, ns_label)
 
@@ -303,6 +342,22 @@ def emit(results, dom, today, ns_label):
         })
 
     out = pd.DataFrame(rows).merge(dom, on="domain", how="left")
+
+    # Refuse to write a broken run. A sweep where a fifth of lookups failed is
+    # not a measurement of anything, and the file it would produce is
+    # indistinguishable from a real one at every downstream check -- correctly
+    # typed, correctly named, and quietly claiming that most of the world's
+    # institutions publish no DMARC. Exiting non-zero without writing is the
+    # only behaviour that cannot be mistaken for a result.
+    fail_rate = (out.dmarc_status == "lookup_failed").mean()
+    if fail_rate > MAX_FAILURE_RATE:
+        sys.exit(
+            f"ABORTED: {fail_rate:.0%} of DMARC lookups failed "
+            f"({int((out.dmarc_status == 'lookup_failed').sum())} of {len(out)}), "
+            f"above the {MAX_FAILURE_RATE:.0%} ceiling. This is a broken run, not "
+            "a finding -- nothing written. Check resolver reachability and retry."
+        )
+
     out.to_csv(OUT, index=False)
 
     n = len(out)

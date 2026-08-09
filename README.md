@@ -1,89 +1,134 @@
 # open_house
 
-**How exposed are national legislatures?**
+**Most of the world's national institutions can be impersonated by email.**
 
 A house is what a legislature calls itself. *Open* is what its security posture
-often turns out to be — open ports, open relays, open resolvers. An open house
-is one anyone can walk into.
+usually turns out to be.
 
-## The question, and why this framing
+We measured whether the email domains of national legislatures, heads of state,
+executives and supreme courts can be spoofed — 523 domains across 238
+jurisdictions, every national institution Wikidata records with a website.
 
-Earlier work on politician email breaches ([themains/pwned_pols][pp]) measured
-how often a legislator's address appears in a public breach corpus. Checking
-that measure against expert-coded incident data changed the question.
+## What we found
 
-Of 506 incidents in the [European Repository of Cyber Incidents][eurepoc]
-carrying a coded MITRE initial-access technique, intrusions begin with:
+**54% have no effective protection against email spoofing.**
 
-| how the intrusion started | share |
+| DMARC policy | share of 502 measured domains |
 |---|---|
-| Phishing | 35.4% |
+| `p=reject` — blocks forged mail | **24.3%** |
+| `p=quarantine` — sends it to spam | 21.5% |
+| `p=none` — monitors, blocks nothing | 17.7% |
+| no DMARC record at all | **34.3%** |
+| record published but malformed | 2.2% |
+
+**DNSSEC: zero of 523.** Not one national institution has it enabled.
+
+SPF is far more common than DMARC — 264 domains publish a hard-fail policy. But
+SPF does not protect the `From:` address a human actually sees. It is the
+widely-adopted protocol that doesn't stop the attack.
+
+### Courts are the best defended, executives the worst
+
+| branch | unprotected |
+|---|---|
+| Supreme courts | 44.7% |
+| Heads of state | 53.3% |
+| Legislatures | 57.1% |
+| **Executives / governments** | **60.0%** |
+
+Because the four branches are measured *within the same countries*, this
+comparison holds national wealth, technical capacity and threat environment
+fixed. The gap is about institutions, not about which countries are rich.
+
+### Mandates work, where they are enforced
+
+Five countries require DMARC on government domains (US, UK, Netherlands, New
+Zealand, Denmark). Their institutions reach **57.9%** at `p=reject`, against
+**23.0%** elsewhere.
+
+But compliance is uneven even among them. The United States and the Netherlands
+enforce across every branch. Denmark mandates `p=reject` and its parliament sits
+at `quarantine`. New Zealand's `parliament.nz` publishes no DMARC record at all.
+*(19 domains across 5 countries — indicative, not decisive.)*
+
+## Why it matters
+
+An institution whose domain can be spoofed is one where any citizen, journalist
+or member of staff can receive mail that appears to come from it and passes
+every check an ordinary mail client performs.
+
+That matters here more than for most organisations, because of how attacks on
+political targets actually begin. In the [European Repository of Cyber
+Incidents][eurepoc], among incidents with a coded initial-access technique:
+
+| how intrusions started | share |
+|---|---|
+| **Phishing** | **35.4%** |
 | Exploiting a public-facing application | 34.8% |
-| **Stolen credentials** | **10.9%** |
+| Stolen credentials | 10.9% |
 
-Credential exposure is roughly one entry route in nine. A perfect measure of it
-would sit upstream of about a tenth of what actually happens. This project
-measures all three surfaces instead, and at the level of the institution rather
-than the individual address.
+Phishing is the single largest entry route — more than three times the share
+attributable to leaked passwords, which is what most research on this topic
+measures. Spoofable domains are the cheap end of that attack.
 
-| surface | vector share | instrument |
-|---|---|---|
-| Phishing | 35.4% | DMARC policy, SPF qualifier, MTA-STS, DNSSEC |
-| Public-facing exploit | 34.8% | Censys certificate pivot → Shodan CPE → NVD → EPSS |
-| Credentials | 10.9% | domain-level exposure imported from `pwned_pols` |
+The fix is one DNS record. It costs nothing and requires no procurement.
 
-Outcomes come from EuRepoC, institutional capacity from the IPU's *World
-e-Parliament Report*, and country controls from the World Bank, UN EGDI, ITU GCI
-and V-Dem.
+## What this does not show
 
-## Ethics
+**Posture is not outcome.** This measures one surface. It does not show that any
+institution has been compromised, and a well-configured domain is not a safe
+one. Incident data is included here to test that link; the test has not been run.
 
-**Passive only.** Every measurement queries an index that already exists.
-Nothing here contacts a parliament's infrastructure. That is a property of the
-architecture rather than a setting — there is no active code path to disable.
-It is also why this uses Censys and Shodan directly rather than an orchestrator
-such as SpiderFoot, which ships subdomain brute-forcing and port scanning among
-its modules.
+## Reading the data honestly
 
-**Two disclosure tiers**, because the categories are not alike:
+**A failed lookup is not an absent record.** Every result is `ok`, `absent`,
+`invalid`, `nxdomain` or `lookup_failed`, and anything unrecognised falls to
+`lookup_failed`. Conflating "publishes nothing" with "we could not ask" is the
+easiest way to manufacture a finding in this area, and an early version of this
+code did exactly that.
 
-- *Exploitable exposure* — services and CVEs — is reported **in aggregate only**,
-  by region or income group. Naming which legislature runs an exploitable
-  service publishes an attack path.
-- *Public policy configuration* — DMARC, DNSSEC — resolves in a single DNS
-  lookup by anyone, is already published by sector commercially, and is not
-  exploitable in itself; the risk falls on recipients of spoofed mail rather
-  than on the institution. Naming is defensible here, and naming is what creates
-  accountability.
+**21 domains are excluded**: 15 no longer resolve at all (Wikidata lists a site
+that has gone away) and 6 sit behind unreachable nameservers. All 21 were
+re-checked independently and **none changed**, so the exclusions are stable
+rather than transient.
 
-**Findings reach the affected institution before they are published**, through
-its national CSIRT. That route is built before collection, not improvised after
-a finding.
-
-## Measurement notes that matter
-
-**A DNS timeout is not an absent record.** Every lookup is classified `ok`,
-`absent`, `invalid` or `lookup_failed`, and anything unrecognised resolves
-toward *we do not know*. Conflating the two manufactures findings, and this is
-not hypothetical: the first three-domain test recorded a timeout against a
-parliament that would otherwise have been scored as publishing no DMARC at all.
-The same confusion cost the predecessor project roughly 270 addresses.
-
-**A malformed record is its own category.** A legislature publishing a broken
+**A malformed record is its own category.** An institution publishing a broken
 DMARC record tried and failed — a different fact, and a different remedy, from
-never having tried.
+never having tried. One country publishes two conflicting DMARC records, which
+under RFC 7489 means receivers ignore both: it looks strict and protects nothing.
 
-**Resolvers are pinned.** Public resolvers, fixed in the collector, so a
-measurement does not depend on whatever the local network happens to hand out.
+## Method
 
-## Status
+- **Frame** — Wikidata: legislative body (`P194`), head-of-state office
+  (`P1906`), executive (`P208`), highest court (`P209`), restricted to entities
+  with an ISO-3166 country code. A census of national institutions, not a
+  convenience sample of domains.
+- **Measurement** — [`checkdmarc`][cd] for DMARC, SPF, MTA-STS and DNSSEC. All
+  lookups are passive DNS. **Nothing in this project contacts an institution's
+  infrastructure**; there is no active code path.
+- **Reproduce** — `make setup`, then run the collectors in
+  `scripts/collect/`. Raw responses are snapshotted before parsing, so results
+  can be re-derived without re-querying.
 
-Early. The email-authentication sweep runs; the scanning tier awaits research
-access to Censys and Shodan.
+## Disclosure
 
-Supersedes [themains/secure_gov][sg], which proposed this with SpiderFoot and
-was never built.
+DMARC and DNSSEC status is public configuration: anyone can resolve any of it in
+a single DNS query, and it is already published commercially by sector. It is not
+exploitable in itself — the risk falls on people *receiving* spoofed mail. So it
+is published per institution, because naming is what creates accountability.
 
-[pp]: https://github.com/themains/pwned_pols
+Work on exploitable exposure — services and vulnerabilities — will be reported
+**in aggregate only**, and findings will go to the affected institution's
+national CSIRT before publication. That distinction is enforced by a build gate,
+not by good intentions.
+
+## Related
+
+- [themains/pwned_pols][pp] — breach exposure of politicians' email addresses,
+  the project this grew out of
+- Supersedes [themains/secure_gov][sg]
+
 [eurepoc]: https://eurepoc.eu/
+[cd]: https://github.com/domainaware/checkdmarc
+[pp]: https://github.com/themains/pwned_pols
 [sg]: https://github.com/themains/secure_gov
