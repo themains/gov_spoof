@@ -8,3 +8,7 @@ __pycache__/
 # CC-BY-NC and pinned by DOI in its collector; Wikidata and DNS results are
 # regenerable from the collectors.
 data/raw/
+
+# Row-level EuRepoC extract: CC-BY-NC, and this repo commits aggregates only.
+# Regenerate with scripts/collect/eurepoc.py against the DOI-pinned release.
+data/eurepoc_incident_profile.csv

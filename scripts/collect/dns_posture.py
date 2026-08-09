@@ -40,7 +40,7 @@ import pandas as pd
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 RAW = os.path.join(REPO, "data", "raw", "dns_posture")
-OUT = os.path.join(REPO, "data", "legislature_dns_posture.csv")
+OUT = os.path.join(REPO, "data", "institution_dns_posture.csv")
 
 # Preferred public resolvers, matching 05_validate_email_domains. Pinning makes
 # a measurement reproducible rather than dependent on whatever the local network
@@ -190,7 +190,7 @@ def domains_from_frame():
     frame = pd.read_csv(os.path.join(REPO, "data", "legislature_domains.csv"))
     have = frame[frame.domain.notna()].copy()
     return (
-        have[["domain", "country", "cc3", "legislature", "legislature_qid"]]
+        have[["domain", "country", "cc3", "branch", "body", "body_qid", "sovereign"]]
         .drop_duplicates("domain")
         .sort_values(["country", "domain"])
         .reset_index(drop=True)

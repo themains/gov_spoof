@@ -17,16 +17,15 @@ PY := $(abspath $(VENVPATH))/bin/python
 # vacuously for months after a rename, guarding four names that no longer
 # existed.
 FROZEN_COLLECTORS := \
-	scripts/collect/legislature_frame.py \
+	scripts/collect/institution_frame.py \
 	scripts/collect/dns_posture.py \
 	scripts/collect/eurepoc.py
 
 # Outputs of those collectors. The analysis reads these and never the network.
 FROZEN_INPUTS := \
-	data/legislature_domains.csv \
-	data/legislature_dns_posture.csv \
+	data/institution_domains.csv \
+	data/institution_dns_posture.csv \
 	data/eurepoc_political_incidents.csv \
-	data/eurepoc_incident_profile.csv
 
 .PHONY: guard-frozen
 guard-frozen: ## Assert no build target runs a collector
