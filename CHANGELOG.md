@@ -1,5 +1,40 @@
 # Changelog
 
+## v0.1.1 — 2026-08-20
+
+No data or figure changed; every number is identical to v0.1.0 and `make check`
+ties all 73 of them to a generated table. But three claims in the v0.1.0 prose
+were wrong, and an independent review of the rewrite caught them.
+
+### Corrected
+
+- **"Courts look best defended and executives worst."** Legislatures are worst,
+  at 58.4% against the executives' 58.0% — and the table directly above the
+  sentence bolds the legislature figure. The prose contradicted its own exhibit.
+- **"The ordering survives" in the balanced 55-country subset.** Only the courts
+  do. Legislatures go from worst in the unbalanced column to second best in the
+  balanced one, and the spread across all four halves, from 11.8 points to 5.9.
+- **"Executives are the only branch still pointing the same way after the
+  control."** All three point the same way before and after; none changes sign.
+  Executives keep the largest gap, which is a different and smaller claim.
+
+### Changed
+
+- The page was titled with the repository slug and opened with a section header
+  announcing that we had looked, so the headline number arrived fifteen lines
+  down. It opens with the number.
+- "Reading the data honestly" is gone as a section. Its caveats were correct and
+  quarantined, which asks a reader to leave a table to learn what the table can
+  support. Each now sits with the claim it qualifies: malformed records and `sp`
+  inheritance under the policy table, the exclusions with the denominator, the
+  TCP/UDP failure beside the DNSSEC figure, the single-snapshot limit under the
+  headline. Three caveats lost in the first draft of that move — the per-column
+  failure ceiling, the rejection of a uniform DNSSEC column, and repeat
+  measurement not having been done — are restored.
+- Cut the bold-header list pattern from twelve instances to five, where it is a
+  definition list rather than formatting standing in for prose, and thinned the
+  punchline endings and negative-parallelism constructions.
+
 ## v0.1.0 — 2026-08-20
 
 First tagged release. 613 institutional domains measured across 224

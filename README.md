@@ -16,7 +16,7 @@ usually turns out to be.
 | no DMARC record at all | **33.9%** |
 | record published but malformed | 2.4% |
 
-Four things about that table decide how much weight it carries.
+Four things decide how much weight that table carries.
 
 The last row is its own category, not a rounding error. An institution
 publishing a broken record tried and failed, which is a different fact and a
@@ -47,9 +47,10 @@ Greenlandic — so the share could in principle be carried by a few bodies with
 neglected aliases. It isn't: counting an institution unprotected only when
 *none* of its domains is protected gives 326 of 594, or 54.9%.
 
-Every number here comes from a single sweep on one day. A nameserver that was
-slow that afternoon is recorded as we found it, and nothing here separates a
-lasting configuration from a momentary one.
+Beyond those four: every number here comes from a single sweep on one day. A
+nameserver that was slow that afternoon is recorded as we found it, nothing
+separates a lasting configuration from a momentary one, and repeat measurement
+is the obvious next step and has not been taken.
 
 ## Neither SPF nor DNSSEC stops it
 
@@ -68,7 +69,12 @@ UDP/53 answers every DMARC query and silently drops every DNSKEY query — a swe
 that looks completely healthy and in which no zone anywhere appears signed. An
 earlier version of this page reported exactly that. The sweep now probes TCP
 against a known-signed zone before it starts, records which nameserver answered,
-and writes `lookup_failed` rather than "unsigned" when none does.
+and writes `lookup_failed` rather than "unsigned" when none does. Each column is
+checked against its own failure ceiling, because a healthy DMARC column says
+nothing about whether any other lookup got an answer, and a DNSSEC column that
+comes back uniform in either direction is rejected outright: all unsigned was the
+original failure, and all signed would be a validating resolver telling the same
+kind of lie.
 
 ## These are lower bounds
 
@@ -131,13 +137,14 @@ homepage of a press-freedom NGO.
 | Legislatures | 214 | 204 | **58.4%** |
 | Executives / governments | 143 | 136 | 58.0% |
 
-Courts look best defended and executives worst. That ordering does not survive
-the obvious control, because the four branches are not measured in the same
-countries. Supreme courts appear in 92 of them and legislatures in 204, since
-Wikidata records highest courts more thinly and does so for states that document
-themselves well. The column compares different sets of countries, and a
-difference between branches is indistinguishable from a difference between the
-countries each branch is drawn from.
+Courts look best defended, and legislatures worst with executives a few tenths
+behind them. That ordering does not survive the obvious control, because the
+four branches are not measured in the same countries. Supreme courts appear in
+92 of them and legislatures in 204, since Wikidata records highest courts more
+thinly and does so for states that document themselves well. The column
+compares different sets of countries, and a difference between branches is
+indistinguishable from a difference between the countries each branch is drawn
+from.
 
 Holding the country fixed separates them. The contrast is identified off the 176
 countries with at least two branches measured, covering 565 of the 613 domains;
@@ -153,14 +160,16 @@ standard errors clustered by country:
 
 Every gap shrinks and none is distinguishable from zero. The same shows without
 a model, on the 55 countries where all four branches were measured: supreme
-courts at 46.7%, legislatures 50.9%, heads of state 51.8%, executives 52.6%. The
-ordering survives there, at half the spread the unbalanced column shows.
+courts at 46.7%, legislatures 50.9%, heads of state 51.8%, executives 52.6%.
+Courts stay ahead, but the other three reorder — legislatures go from worst to
+second best — and the spread across all four halves, from 11.8 points to 5.9.
 
 So the branch gap is a fact about which countries each branch is observed in.
 This frame was built with four branches precisely to make the within-country
-comparison possible, and on this outcome it does not find one. Executives are
-the only branch still pointing the same way after the control, at +6.1 points
-against a standard error of 8.9, which is a direction worth measuring again.
+comparison possible, and on this outcome it does not find one. All three gaps
+still point the same way after the control; executives keep the largest, at +6.1
+points against a standard error of 8.9, which is a direction worth measuring
+again rather than a result.
 
 ## The five countries that mandate DMARC
 
