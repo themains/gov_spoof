@@ -67,6 +67,20 @@ def main():
     missing = {k: v for k, v in figures.items() if k not in NOT_IN_PROSE and not appears(v, readme)}
     checked = len(figures) - len(NOT_IN_PROSE)
 
+    # Two figures with the same value are indistinguishable to a substring
+    # check: n_countries_fe and n_exploit were both "176", so either could
+    # satisfy the other's test. The gate cannot fix that -- it can refuse to
+    # hide it.
+    seen = {}
+    for k, v in figures.items():
+        seen.setdefault(v, []).append(k)
+    collisions = {v: ks for v, ks in seen.items() if len(ks) > 1}
+    if collisions:
+        print(f"  note: {len(collisions)} value(s) are shared by more than one figure,")
+        print("  so a match for one satisfies the other. Check these by eye:")
+        for v, ks in sorted(collisions.items()):
+            print(f"    {v:>10}  {', '.join(sorted(ks))}")
+
     if missing:
         print(f"  FAIL: {len(missing)} generated figure(s) do not appear in README.md:")
         for k, v in sorted(missing.items()):

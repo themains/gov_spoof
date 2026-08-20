@@ -152,8 +152,7 @@ def dnssec_nameservers():
 
     for ns in PREFERRED_NAMESERVERS:
         try:
-            nslist = (dns.resolver.Resolver().nameservers if ns == "system"
-                      else [ns])
+            nslist = dns.resolver.Resolver().nameservers if ns == "system" else [ns]
             nslist = [str(x) for x in nslist]
             if not nslist:
                 continue
@@ -183,13 +182,24 @@ def dnssec_nameservers():
 NXDOMAIN = ("the domain does not exist",)
 
 # The domain resolves and publishes no such record. A real, measurable finding.
-ABSENT = ("record does not exist", "no dmarc record", "no spf record",
-          "does not have a dmarc record", "does not have an spf record")
+ABSENT = (
+    "record does not exist",
+    "no dmarc record",
+    "no spf record",
+    "does not have a dmarc record",
+    "does not have an spf record",
+)
 
 # We failed to ask. Not a finding; missing data.
-TRANSIENT = ("timed out", "resolution lifetime expired", "no nameservers",
-             "nameservers failed to answer", "connection", "temporary",
-             "batch error")
+TRANSIENT = (
+    "timed out",
+    "resolution lifetime expired",
+    "no nameservers",
+    "nameservers failed to answer",
+    "connection",
+    "temporary",
+    "batch error",
+)
 
 
 def status_of(block):
@@ -221,6 +231,45 @@ def status_of(block):
     # Published but malformed: a distinct and interesting state, and a different
     # remedy from never having tried.
     return "invalid", block.get("error")
+
+
+def zone_answers(domain, resolver=None):
+    """Does this zone's DNS answer at all? Used only to qualify a DNSSEC False.
+
+    Separates "asked, and there is no key" from "asked, and nothing came back".
+    A NoAnswer or NoNameservers means the name exists but the zone would not
+    talk to us, which is missing data; NXDOMAIN means the name is gone, which
+    the DMARC status already records.
+    """
+    import dns.resolver
+
+    if not domain:
+        return False
+    r = resolver
+    if r is None:
+        # System resolver, NOT a pinned public one: dnspython cannot reach
+        # 1.1.1.1 over UDP from this host even though dig can, so a hardcoded
+        # 1.1.1.1 made every query time out and every unsigned zone look
+        # unreachable -- 498 of 647, which tripped the failure ceiling and
+        # correctly refused to write.
+        #
+        # And NOT working_resolver() either. That probes four nameservers and
+        # sys.exit()s if none answers; called from inside a thread pool it ran
+        # 498 times at once, starved its own probe, and killed the process.
+        # Pick the resolver once in zone_answers_bulk and pass it down.
+        r = dns.resolver.Resolver()
+        r.timeout, r.lifetime = 4, 8
+    for rdtype in ("SOA", "NS", "A"):
+        try:
+            r.resolve(domain, rdtype)
+            return True
+        except dns.resolver.NXDOMAIN:
+            return False
+        except dns.resolver.NoAnswer:
+            return True
+        except Exception:  # noqa: BLE001 - unreachable is the thing we are testing
+            continue
+    return False
 
 
 def effective_policy(dmarc, domain):
@@ -308,30 +357,39 @@ def domains_from_frame():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, default=None,
-                    help="only the first N domains; for a pilot run")
-    ap.add_argument("--verbose", action="store_true",
-                    help="attach a handler to checkdmarc's own logger. It "
-                         "reports every failed lookup at DEBUG, including the "
-                         "'DNSSEC query error' that fired 523 times during the "
-                         "2026-08-08 sweep with nothing listening. Progress "
-                         "narration below stays on stdout; this is for when a "
-                         "column comes back uniform and you need to know why.")
-    ap.add_argument("--reparse", action="store_true",
-                    help="re-derive the table from the newest raw snapshot "
-                         "without re-querying DNS. This is why the snapshot is "
-                         "written before anything parses it: a classification "
-                         "bug costs a second, not another full sweep.")
+    ap.add_argument(
+        "--limit", type=int, default=None, help="only the first N domains; for a pilot run"
+    )
+    ap.add_argument(
+        "--verbose",
+        action="store_true",
+        help="attach a handler to checkdmarc's own logger. It "
+        "reports every failed lookup at DEBUG, including the "
+        "'DNSSEC query error' that fired 523 times during the "
+        "2026-08-08 sweep with nothing listening. Progress "
+        "narration below stays on stdout; this is for when a "
+        "column comes back uniform and you need to know why.",
+    )
+    ap.add_argument(
+        "--reparse",
+        action="store_true",
+        help="re-derive the table from the newest raw snapshot "
+        "without re-querying DNS. This is why the snapshot is "
+        "written before anything parses it: a classification "
+        "bug costs a second, not another full sweep.",
+    )
     args = ap.parse_args()
 
     if args.verbose:
         import logging
+
         logging.basicConfig(level=logging.DEBUG, format="  [%(name)s] %(message)s")
 
     dom = domains_from_frame()
 
     if args.reparse:
         import glob
+
         snaps = sorted(glob.glob(os.path.join(RAW, "checkdmarc_*.json")))
         if not snaps:
             sys.exit(f"no snapshot in {RAW}; run without --reparse first")
@@ -408,7 +466,7 @@ def main():
             results.append(row)
 
     for i in range(0, len(domains), CHUNK):
-        batch = domains[i:i + CHUNK]
+        batch = domains[i : i + CHUNK]
         try:
             # timeout/retries left at checkdmarc's defaults. Raising them to
             # 5.0/1 pushed 50 domains past ten minutes, and a longer timeout
@@ -422,8 +480,7 @@ def main():
             # place `nameservers` is read is test_dnssec, which accepts no
             # resolver -- so this argument exists solely to keep the DNSSEC
             # column off /etc/resolv.conf.
-            r = check_domains(batch, skip_tls=True, resolver=resolver,
-                              nameservers=dnssec_ns)
+            r = check_domains(batch, skip_tls=True, resolver=resolver, nameservers=dnssec_ns)
             add(r, dnssec_label)
         except Exception as exc:  # noqa: BLE001 - one bad batch must not end the run
             # Re-probe before writing the batch off. A resolver that worked at
@@ -434,28 +491,74 @@ def main():
                 resolver, ns_label = working_resolver()
                 dnssec_ns, dnssec_label = dnssec_nameservers()
                 print(f"  resolver now: {ns_label}; retrying batch")
-                r = check_domains(batch, skip_tls=True, resolver=resolver,
-                                  nameservers=dnssec_ns)
+                r = check_domains(batch, skip_tls=True, resolver=resolver, nameservers=dnssec_ns)
                 add(r, dnssec_label)
                 print(f"  {min(i + CHUNK, len(domains)):>4}/{len(domains)}", flush=True)
                 continue
             except Exception as exc2:  # noqa: BLE001
                 print(f"  retry also failed: {exc2}")
+                # EVERY column, not just DMARC. status_of() reads an absent
+                # block as an empty dict, and an empty dict has no error
+                # string, so it returned "absent" -- recording 25 domains as
+                # publishing no SPF when the truth is that we never asked.
                 for d in batch:
-                    results.append({"domain": d, "dnssec_nameserver": None,
-                                    "dmarc": {"valid": False,
-                                              "error": f"batch error: {exc2}"}})
+                    err = {"valid": False, "error": f"batch error: {exc2}"}
+                    results.append(
+                        {
+                            "domain": d,
+                            "dnssec_nameserver": None,
+                            "dmarc": dict(err),
+                            "spf": dict(err),
+                            "mta_sts": dict(err),
+                        }
+                    )
         with open(snap_path, "w") as fh:
             json.dump(results, fh, indent=1, default=str)
         print(f"  {len(results):>4}/{len(dom)} (snapshot saved)", flush=True)
 
-    return emit(results, dom, today, ns_label)
+    return emit(results, dom, today, ns_label, resolver)
 
 
-def emit(results, dom, today, ns_label):
+def zone_answers_bulk(domains, resolver=None, workers=24):
+    """zone_answers for many domains at once.
+
+    Sequential, this check added an hour to a reparse: one NS lookup per
+    unsigned domain, ~500 of them, each willing to wait 8 seconds. The queries
+    are independent and the work is entirely network wait, so a thread pool
+    turns it into about a minute. Ordinary concurrency, noted only because the
+    sequential version was slow enough to be abandoned rather than fixed.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    import dns.resolver
+
+    domains = list(domains)
+    if not domains:
+        return {}
+    if resolver is None:
+        # Once, here -- not once per domain inside the pool.
+        resolver = dns.resolver.Resolver()
+        resolver.timeout, resolver.lifetime = 4, 8
+    with ThreadPoolExecutor(workers) as ex:
+        return dict(zip(domains, ex.map(lambda d: zone_answers(d, resolver), domains)))
+
+
+def emit(results, dom, today, ns_label, resolver=None):
     """Turn raw checkdmarc output into the table. Split out of main() so
     --reparse can re-derive it from a snapshot without re-querying DNS.
     """
+    # One pass to find the domains whose DNSSEC False needs qualifying, then
+    # one concurrent sweep, then the row loop. Doing the lookup inside the loop
+    # is the same work serialised.
+    needs_check = [
+        r.get("domain")
+        for r in results
+        if r.get("dnssec_nameserver")
+        and not r.get("dnssec")
+        and status_of(r.get("dmarc", {}))[0] != "nxdomain"
+    ]
+    answers = zone_answers_bulk(needs_check, resolver)
+
     rows = []
     for res in results:
         dmarc, spf = res.get("dmarc", {}), res.get("spf", {})
@@ -469,6 +572,16 @@ def emit(results, dom, today, ns_label):
         # A DNSKEY query that was never asked is not a zone that is unsigned.
         # `dnssec` is a bare bool, so the stamp is the only thing that separates
         # them; no stamp means no measurement, whatever the bool happens to say.
+        #
+        # The stamp proves a nameserver was CHOSEN, not that this domain's query
+        # got an answer, and test_dnssec() collapses "no key here" and "the
+        # query died" into the same False. An independent dig sweep found
+        # DNSKEYs on 8 domains this file had recorded as unsigned, domstol.no
+        # and president.gov.mt among them. So a False is only trusted where the
+        # zone demonstrably answers: if its nameservers do not respond, the
+        # honest value is lookup_failed. That check costs one NS query per
+        # unsigned domain and is the difference between a measurement and an
+        # assumption.
         served_by = res.get("dnssec_nameserver")
         if d_status == "nxdomain":
             dnssec_status = "nxdomain"
@@ -476,28 +589,33 @@ def emit(results, dom, today, ns_label):
         elif not served_by:
             dnssec_status = "lookup_failed"
             dnssec = None
+        elif res.get("dnssec"):
+            dnssec, dnssec_status = True, "ok"
+        elif answers.get(res.get("domain"), False):
+            dnssec, dnssec_status = False, "absent"
         else:
-            dnssec = bool(res.get("dnssec"))
-            dnssec_status = "ok" if dnssec else "absent"
+            dnssec, dnssec_status = None, "lookup_failed"
 
-        rows.append({
-            "domain": res.get("domain"),
-            "dmarc_status": d_status,
-            "dmarc_policy": policy,
-            "dmarc_effective_policy": effective_policy(dmarc, res.get("domain")),
-            "dmarc_error": d_err,
-            "spf_status": s_status,
-            "spf_qualifier": spf_qualifier(spf),
-            "spf_dns_lookups": spf_lookups(spf),
-            "spf_error": s_err,
-            "mta_sts": status_of(res.get("mta_sts"))[0],
-            "dnssec": dnssec,
-            "dnssec_status": dnssec_status,
-            "dnssec_resolver": served_by,
-            "checked_date": today,
-            "resolver": ns_label,
-            "source_id": "dns_posture",
-        })
+        rows.append(
+            {
+                "domain": res.get("domain"),
+                "dmarc_status": d_status,
+                "dmarc_policy": policy,
+                "dmarc_effective_policy": effective_policy(dmarc, res.get("domain")),
+                "dmarc_error": d_err,
+                "spf_status": s_status,
+                "spf_qualifier": spf_qualifier(spf),
+                "spf_dns_lookups": spf_lookups(spf),
+                "spf_error": s_err,
+                "mta_sts": status_of(res.get("mta_sts"))[0],
+                "dnssec": dnssec,
+                "dnssec_status": dnssec_status,
+                "dnssec_resolver": served_by,
+                "checked_date": today,
+                "resolver": ns_label,
+                "source_id": "dns_posture",
+            }
+        )
 
     out = pd.DataFrame(rows).merge(dom, on="domain", how="left")
 
@@ -526,13 +644,14 @@ def emit(results, dom, today, ns_label):
     out.to_csv(OUT, index=False)
 
     n = len(out)
-    print("\n  dmarc: " + ", ".join(
-        f"{k} {v}" for k, v in out.dmarc_status.value_counts().items()))
-    print("  effective policy among valid: " + ", ".join(
-        f"{k} {v}" for k, v in
-        out.dmarc_effective_policy.value_counts(dropna=False).items()))
-    print("  dnssec: " + ", ".join(
-        f"{k} {v}" for k, v in out.dnssec_status.value_counts().items()))
+    print("\n  dmarc: " + ", ".join(f"{k} {v}" for k, v in out.dmarc_status.value_counts().items()))
+    print(
+        "  effective policy among valid: "
+        + ", ".join(
+            f"{k} {v}" for k, v in out.dmarc_effective_policy.value_counts(dropna=False).items()
+        )
+    )
+    print("  dnssec: " + ", ".join(f"{k} {v}" for k, v in out.dnssec_status.value_counts().items()))
 
     for col, name, absent_means in (
         ("dmarc_status", "DMARC", "no DMARC"),

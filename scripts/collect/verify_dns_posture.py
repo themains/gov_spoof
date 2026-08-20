@@ -73,9 +73,14 @@ def dig(args, timeout=20):
         r = subprocess.run(
             ["dig", "+time=3", "+tries=2"] + args, capture_output=True, text=True, timeout=timeout
         )
-        return r.stdout
     except (subprocess.SubprocessError, OSError):
         return ""
+    # dig writes ";; connection timed out; no servers could be reached" to
+    # STDOUT, not stderr, even under +short. Returning it raw made
+    # bool(dig(...)) true for every domain, so an unreachable resolver scored a
+    # DNSKEY on all 620 zones and 21% agreement -- which is what the guards
+    # below caught. Diagnostic lines are not answers.
+    return "\n".join(ln for ln in r.stdout.splitlines() if not ln.startswith(";;"))
 
 
 def authoritative_policy(domain):
@@ -137,6 +142,21 @@ def main():
     ap.add_argument("--workers", type=int, default=24)
     args = ap.parse_args()
 
+    # Confirm the second route can actually resolve before measuring 600 domains
+    # through it. 1.1.1.1 stopped answering from this host partway through a
+    # session; without this probe the run produces a full table of nothing and
+    # relies on the downstream guards to notice.
+    if (
+        "V=DMARC1"
+        not in dig(["+short", "TXT", "_dmarc.parliament.uk", f"@{args.resolver}"]).upper()
+    ):
+        sys.exit(
+            f"the verification resolver {args.resolver} does not answer. This "
+            "script exists to disagree with the primary measurement, so it must "
+            "reach a resolver the primary did not use -- pass --resolver with one "
+            "that works rather than accepting a sweep nothing checked."
+        )
+
     if not os.path.exists(POSTURE):
         sys.exit(f"no posture table at {POSTURE}; run dns_posture.py first")
     post = pd.read_csv(POSTURE)
@@ -149,6 +169,28 @@ def main():
     m.to_csv(OUT, index=False)
 
     fail = 0
+
+    # A comparison is only evidence if both sides actually measured something.
+    # Every check below is scoped to dmarc_status == "ok", so a primary
+    # measurement that reported "absent" for every domain would produce an empty
+    # comparison set and a clean exit -- the verifier certifying the exact
+    # catastrophe it exists to catch. Assert the two sides are non-degenerate
+    # BEFORE comparing them.
+    n_dig_found = int(m.dig_dmarc_found.fillna(False).astype(bool).sum())
+    n_primary_ok = int((m.dmarc_status == "ok").sum())
+    print(f"\n  primary found a record on {n_primary_ok}; dig found one on {n_dig_found}")
+    if n_dig_found == 0:
+        fail = 1
+        print(
+            "  FAIL: dig found no DMARC record anywhere. Every comparison below "
+            "is over an empty set and proves nothing."
+        )
+    if n_primary_ok == 0:
+        fail = 1
+        print(
+            "  FAIL: the primary measurement reports no valid DMARC record "
+            "anywhere. That is a broken sweep, not a finding."
+        )
 
     # ---- policy conflicts -------------------------------------------------
     both = m[(m.dmarc_status == "ok") & m.dig_dmarc_found & m.dig_policy.notna()]
@@ -219,6 +261,18 @@ def main():
         if agree < 0.90:
             fail = 1
             print(f"  FAIL: only {agree:.0%} agreement on DNSSEC between " "checkdmarc and dig.")
+        # Agreement counts matching NEGATIVES too, so if dig resolved no DNSKEY
+        # at all it still scores ~92% against a frame that is ~80% unsigned --
+        # a pass earned entirely by both sides saying "no". The second route has
+        # to have found something for its agreement to mean anything.
+        n_dig_keys = int(meas.dig_dnskey.fillna(False).astype(bool).sum())
+        print(f"  dig resolved a DNSKEY on:      {n_dig_keys}")
+        if n_dig_keys == 0:
+            fail = 1
+            print(
+                "  FAIL: dig resolved no DNSKEY on any domain, so the "
+                "agreement figure above is agreement about nothing."
+            )
     else:
         fail = 1
         print("\n  FAIL: no domain has a measured DNSSEC status.")

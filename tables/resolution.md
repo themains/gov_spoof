@@ -7,8 +7,8 @@ Three passes. The first reads the Wikipedia infobox `website` field. The second,
 | outcome | institutions |
 |---|---|
 | accepted into the frame | 126 |
-| rejected on review | 46 |
-| still unresolved | 46 |
+| rejected on review | 29 |
+| still unresolved | 17 |
 | not applicable | 40 |
 
 Every accept and every reject carries the page title that decided it in `data/institution_sites_review.csv`. Nothing is accepted automatically: a matching country code confirms the country and says nothing about the institution, which is how a first draft of this offered Guatemala's Ministry of Agriculture as its Council of Ministers.

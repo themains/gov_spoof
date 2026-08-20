@@ -117,13 +117,18 @@ tables: ## Regenerate every figure the README quotes
 	@echo "==> $@"
 	@$(PY) analysis/posture_tables.py
 
+.PHONY: test
+test: ## Run the unit tests
+	@echo "==> $@"
+	@$(PY) -m pytest tests/ -q
+
 .PHONY: check-readme
 check-readme: ## Fail if a README figure is not in the generated tables
 	@echo "==> $@"
 	@$(PY) analysis/check_readme.py
 
 .PHONY: check
-check: guard-frozen check-inputs check-disclosure tables check-readme ## Run every gate
+check: guard-frozen check-inputs check-disclosure test tables check-readme ## Run every gate
 	@echo "\n==> all gates passed"
 
 .PHONY: setup

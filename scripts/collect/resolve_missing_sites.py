@@ -104,7 +104,22 @@ SHARED_CROWN = re.compile(
 
 
 def host_of(url):
-    h = urlparse(str(url).strip()).netloc.lower().strip()
+    """Hostname from a URL that may have no scheme.
+
+    urlparse puts a scheme-less string entirely in `.path` and leaves `.netloc`
+    empty, so the naive version returned None for every value written as
+    `{{URL|senado.gov.co}}` -- which is how Wikipedia infoboxes usually write
+    them. That silently discarded 18 institutions whose website WAS in the
+    article, including Belarus's House of Representatives, Burundi's parliament,
+    Oman's State Council and the Northern Mariana Islands judiciary, and
+    recorded them as "no website field" so nothing downstream could tell the
+    difference between a missing value and a dropped one.
+    """
+    raw = str(url).strip()
+    if raw and "//" not in raw.split("?", 1)[0][:8]:
+        raw = "//" + raw
+    h = urlparse(raw).netloc.lower().strip()
+    h = h.split("@")[-1].split(":")[0]
     return (h[4:] if h.startswith("www.") else h) or None
 
 
@@ -205,17 +220,23 @@ def exists_in_dns(domain):
     """
     import dns.resolver
 
-    r = dns.resolver.Resolver(configure=False)
-    r.nameservers, r.timeout, r.lifetime = ["1.1.1.1", "8.8.8.8"], 4, 8
+    r = dns.resolver.Resolver()
+    r.timeout, r.lifetime = 4, 8
     for rdtype in ("NS", "SOA", "MX", "A"):
         try:
             r.resolve(domain, rdtype)
             return True
         except dns.resolver.NXDOMAIN:
             return False
-        except Exception:  # noqa: BLE001 - NoAnswer means the name exists
+        except dns.resolver.NoAnswer:
+            return True
+        except Exception:  # noqa: BLE001 - keep trying the other record types
             continue
-    return True
+    # Every query failed. That is not "the name exists" and not "it does not";
+    # it is "we could not ask", and the earlier version returned True here --
+    # failing open, so a run with no working resolver would have silently
+    # certified every candidate as resolvable.
+    return None
 
 
 def validate(domain, cc2):
@@ -240,10 +261,18 @@ def validate(domain, cc2):
         return "reject", f"{domain} is a news outlet, aggregator or social platform"
     if "." not in domain or len(domain) < 4 or re.fullmatch(r"[\d.]+", domain):
         return "reject", f"{domain} is not a hostname"
-    if not exists_in_dns(domain):
+    exists = exists_in_dns(domain)
+    if exists is None:
+        return "review", f"could not reach DNS to check whether {domain} exists"
+    if not exists:
         return "reject", f"{domain} does not exist in DNS (NXDOMAIN)"
     tld = domain.rsplit(".", 1)[-1].lower()
-    govish = bool(re.search(r"\.(gov|gob|gouv|go|govt|gv|gc|admin)\.", domain, re.I))
+    # Both shapes count: gov.co (second level, under a ccTLD) and usa.gov
+    # (the sponsored gTLD, which is US-only and so is itself a jurisdiction
+    # claim). Requiring a trailing dot matched only the first, so asfono.gov
+    # and guamlegislature.gov were filed with the reason "nothing ties it to
+    # the jurisdiction" -- wrong, and the reason string is the audit trail.
+    govish = bool(re.search(r"\.(gov|gob|gouv|go|govt|gv|gc|admin)(\.|$)", domain, re.I))
     country_ok = (cc2 and tld == cc2.lower()) or govish or tld == "int"
     if not country_ok:
         return "review", f"generic TLD .{tld}, and nothing ties it to the jurisdiction"

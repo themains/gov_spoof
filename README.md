@@ -34,7 +34,7 @@ the `From:` address a human actually sees. **135 domains publish strict SPF and
 have no effective DMARC policy.** The work was done and the forgery still lands.
 It is the widely-adopted protocol that doesn't stop the attack.
 
-DNSSEC is enabled on 132 of the 622 zones we could test, about 21%. It appears
+DNSSEC is enabled on 132 of the 613 zones we could test, about 22%. It appears
 here because the same lookup returns it, not because it bears on spoofing:
 DNSSEC protects the path a resolver takes to an answer, not the header a reader
 sees.
@@ -43,7 +43,7 @@ sees.
 
 Wikidata records no website for 172 live institutions in the frame, so they were
 never measured. We resolved what we could from Wikipedia and confirmed each one
-by hand: 126 accepted, 46 rejected, 46 still unresolved. A
+by hand: 126 accepted, 29 rejected, 17 still unresolved. A
 further 40 entries cannot have a website to find — a crown shared between
 realms is a person, not an institution with a domain — and are recorded as such
 rather than counted as failures. What came back settles how to read every other
@@ -59,7 +59,7 @@ defended than the ones that were already in the frame. That is not a surprise
 once stated — the administrative capacity that keeps a public record current is
 the same capacity that configures a DMARC policy — but it means the measurement
 is biased in a knowable direction. **Every figure on this page understates the
-problem**, and the 46 institutions still unresolved are, on this evidence, the
+problem**, and the 17 institutions still unresolved are, on this evidence, the
 weakest of all.
 
 It also means the frame cannot be expanded for free. Resolution succeeds where a
@@ -87,8 +87,9 @@ table on this page counted it as a parliament that blocks forged mail. It was
 scoring the detective agency.
 
 Those 2 are excluded from the figures above, along with 2 Wikidata entries that
-were never institutional and 3 bodies that no longer exist — 8 domains dropped
-in all. The evidence for each verdict is in `data/domain_control_review.csv`.
+were never institutional, 3 bodies that no longer exist, and 1 parallel body —
+Venezuela's supreme tribunal in exile, where the sitting court is already in the
+frame. 8 domains dropped in all. The evidence for each verdict is in `data/domain_control_review.csv`.
 
 The second category is worth its own warning. Wikidata's `P856` is whatever
 someone typed, and nothing validates it. It gave India's head of state an SEO
@@ -99,7 +100,7 @@ of a press-freedom NGO.
 
 | branch | domains | countries | unprotected |
 |---|---|---|---|
-| Supreme courts | 118 | 92 | 46.6% |
+| Supreme courts | 116 | 92 | 46.6% |
 | Heads of state | 140 | 137 | 55.7% |
 | Legislatures | 214 | 204 | **58.4%** |
 | Executives / governments | 143 | 136 | 58.0% |
@@ -243,7 +244,7 @@ the obvious next step and has not been taken.
 - **Frame** — Wikidata: legislative body (`P194`), head-of-state office
   (`P1906`), executive (`P208`), highest court (`P209`), restricted to entities
   with an ISO-3166 country code. A census of national institutions, not a
-  convenience sample of domains. It reaches 238 jurisdictions; the 199 above are
+  convenience sample of domains. It reaches 238 jurisdictions; the 224 above are
   those where at least one institutional domain could actually be measured.
 - **Known frame edges** — `gov.uk` serves three jurisdictions in the frame, and
   Heard Island resolves to the Supreme Court of the Australian Capital

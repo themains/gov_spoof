@@ -3,3 +3,4 @@ requests
 pycountry
 checkdmarc
 statsmodels
+pytest

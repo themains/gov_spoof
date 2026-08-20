@@ -14,7 +14,7 @@ Among political targets specifically, only 11 incidents are coded:
 
 | technique | incidents |
 |---|---|
-| Exploit Public-Facing Application | 5 |
 | Phishing | 3 |
+| Exploit Public-Facing Application | 5 |
 | Valid Accounts | 2 |
 | Supply Chain Compromise | 1 |

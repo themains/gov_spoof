@@ -93,6 +93,11 @@ def md_table(df, headers):
     return "\n".join(lines) + "\n"
 
 
+def _n(df, technique):
+    """Incident count for one MITRE technique."""
+    return int(df.loc[df.technique == technique, "incidents"].iloc[0])
+
+
 def write(name, title, body):
     path = os.path.join(TABLES, name)
     with open(path, "w") as fh:
@@ -232,7 +237,15 @@ def main():
     sites = pd.read_csv(os.path.join(DATA, "institution_sites_resolved.csv"))
     srev = pd.read_csv(os.path.join(DATA, "institution_sites_review.csv"))
     n_target = int((sites.decision != "not_applicable").sum())
-    n_acc = int((srev.verdict == "accept").sum())
+    # Institutions, not candidate evaluations. srev has one row per candidate,
+    # and 17 institutions had a first candidate rejected before a later one was
+    # accepted -- so counting rows made the outcome column sum to 218 against a
+    # denominator of 172. An institution is accepted if ANY of its candidates
+    # was, rejected only if it has candidates and none was accepted.
+    accepted_ids = set(srev.loc[srev.verdict == "accept", "body_qid"].dropna())
+    rejected_ids = set(srev.loc[srev.verdict == "reject", "body_qid"].dropna()) - accepted_ids
+    n_acc = len(accepted_ids)
+    n_rej = len(rejected_ids)
     H.update(
         n_resolved=len(res),
         pct_unprotected_resolved=f"{res.unprotected.mean():.1%}",
@@ -240,11 +253,11 @@ def main():
         n_resolution_target=n_target,
         n_resolution_na=int((sites.decision == "not_applicable").sum()),
         n_resolution_accepted=n_acc,
-        n_resolution_rejected=int((srev.verdict == "reject").sum()),
+        n_resolution_rejected=n_rej,
         # The residual is what is STILL missing after both passes, not the
         # first pass's miss count. Quoting the intermediate figure would
         # overstate how much is left and understate what the second pass did.
-        n_resolution_unresolved=n_target - n_acc,
+        n_resolution_unresolved=n_target - n_acc - n_rej,
     )
     write(
         "resolution.md",
@@ -271,7 +284,7 @@ def main():
                     "institutions": [
                         n_acc,
                         H["n_resolution_rejected"],
-                        n_target - n_acc,
+                        n_target - n_acc - n_rej,
                         H["n_resolution_na"],
                     ],
                 }
@@ -321,6 +334,10 @@ def main():
     for b in BRANCH_ORDER:
         H[f"pct_unprotected_{b}"] = f"{br.loc[b, 'unprotected']:.1%}"
         H[f"n_countries_{b}"] = int(br.loc[b, "countries"])
+        # Exported so the provenance gate covers the branch table's first
+        # column. It did not, and the README shipped 118 Supreme Court domains
+        # against a generated 116 while check-readme reported success.
+        H[f"n_domains_{b}"] = int(br.loc[b, "domains"])
 
     # The raw column above compares branches measured in DIFFERENT sets of
     # countries: the judiciary appears in far fewer than the legislature. Adding
@@ -470,52 +487,36 @@ def main():
     )
 
     # ---- 7. how intrusions start ----------------------------------------
-    g = pd.read_csv(
-        os.path.join(DATA, "raw", "eurepoc", "eurepoc_global_dataset_1_3.csv"), low_memory=False
-    )
-    g["political"] = g.receiver_subcategory.astype(str).apply(
-        lambda s: any(p in s for p in POLITICAL)
-    )
-    coded = g[g.mitre_initial_access != "Not available"]
-    ia = (
-        coded.mitre_initial_access.value_counts()
-        .head(5)
-        .rename_axis("technique")
-        .reset_index(name="incidents")
-    )
-    ia["share"] = [
-        f"{x:.1%}" for x in coded.mitre_initial_access.value_counts(normalize=True).head(5)
-    ]
-    cp = coded[coded.political]
-    # Comma-formatted because that is how it is written in prose, and
-    # check_readme.py compares the exported string to the README verbatim. A
-    # figure exported in one format and quoted in another fails the gate for a
-    # typographic reason, which trains people to ignore the gate.
+    # Reads the COMMITTED aggregate, not data/raw/. The raw EuRepoC release is
+    # gitignored (CC-BY-NC, and regenerable from its DOI), so a script that
+    # reads it crashes on a clean checkout -- which is every CI run and every
+    # reader who clones the repo. The aggregate carries the counts this page
+    # quotes and nothing row-level.
+    ia_all = pd.read_csv(os.path.join(DATA, "eurepoc_initial_access.csv"))
+    n_coded = int(ia_all.n_coded.iloc[0])
+    n_total = int(ia_all.n_total.iloc[0])
+    n_pol = int(ia_all.n_political_coded.iloc[0])
+    ia = ia_all.head(5).copy()
+    ia["share"] = [f"{n / n_coded:.1%}" for n in ia.incidents]
     H.update(
-        n_incidents_total=f"{len(g):,}",
-        n_incidents_coded=len(coded),
-        pct_incidents_coded=f"{len(coded) / len(g):.1%}",
-        n_phishing=int((coded.mitre_initial_access == "Phishing").sum()),
-        n_exploit=int((coded.mitre_initial_access == "Exploit Public-Facing Application").sum()),
-        pct_phishing=f"{(coded.mitre_initial_access == 'Phishing').mean():.1%}",
-        pct_valid_accounts=f"{(coded.mitre_initial_access == 'Valid Accounts').mean():.1%}",
-        n_political_coded=len(cp),
+        n_incidents_total=f"{n_total:,}",
+        n_incidents_coded=n_coded,
+        pct_incidents_coded=f"{n_coded / n_total:.1%}",
+        n_phishing=_n(ia_all, "Phishing"),
+        n_exploit=_n(ia_all, "Exploit Public-Facing Application"),
+        pct_phishing=f"{_n(ia_all, 'Phishing') / n_coded:.1%}",
+        pct_valid_accounts=f"{_n(ia_all, 'Valid Accounts') / n_coded:.1%}",
+        n_political_coded=n_pol,
     )
+    pol_tab = ia_all[ia_all.political_incidents > 0][["technique", "political_incidents"]]
     write(
         "initial_access.md",
         "How intrusions started",
-        f"{len(coded)} of {len(g):,} EuRepoC incidents "
-        f"({len(coded) / len(g):.1%}) carry a coded initial-access "
-        "technique.\n\n"
-        + md_table(ia, ["technique", "incidents", "share"])
-        + f"\nAmong political targets specifically, only {len(cp)} incidents "
-        "are coded:\n\n"
-        + md_table(
-            cp.mitre_initial_access.value_counts()
-            .rename_axis("technique")
-            .reset_index(name="incidents"),
-            ["technique", "incidents"],
-        ),
+        f"{n_coded} of {n_total:,} EuRepoC incidents ({n_coded / n_total:.1%}) carry a coded "
+        "initial-access technique.\n\n"
+        + md_table(ia[["technique", "incidents", "share"]], ["technique", "incidents", "share"])
+        + f"\nAmong political targets specifically, only {n_pol} incidents are coded:\n\n"
+        + md_table(pol_tab, ["technique", "incidents"]),
     )
 
     # ---- 8. the provenance gate -----------------------------------------

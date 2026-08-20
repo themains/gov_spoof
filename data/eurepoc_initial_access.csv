@@ -1,0 +1,10 @@
+technique,incidents,political_incidents,n_coded,n_total,n_political_coded,dataset_version,zenodo_record,source_id,retrieved_date
+Phishing,179,3,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Exploit Public-Facing Application,176,5,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Valid Accounts,55,2,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Drive-By Compromise,30,0,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+External Remote Services,25,0,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Trusted Relationship,13,0,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Supply Chain Compromise,13,1,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Replication Through Removable Media,9,0,506,3414,11,1.3,14965395,eurepoc,2026-08-08
+Hardware Additions,6,0,506,3414,11,1.3,14965395,eurepoc,2026-08-08
