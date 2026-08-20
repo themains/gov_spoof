@@ -12,3 +12,7 @@ data/raw/
 # Row-level EuRepoC extract: CC-BY-NC, and this repo commits aggregates only.
 # Regenerate with scripts/collect/eurepoc.py against the DOI-pinned release.
 data/eurepoc_incident_profile.csv
+
+# Second-route verification output: a check's working file, not a data product.
+# Regenerate with scripts/collect/verify_dns_posture.py against the snapshot.
+data/institution_dns_posture_verify.csv

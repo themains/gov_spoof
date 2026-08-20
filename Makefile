@@ -19,12 +19,27 @@ PY := $(abspath $(VENVPATH))/bin/python
 FROZEN_COLLECTORS := \
 	scripts/collect/institution_frame.py \
 	scripts/collect/dns_posture.py \
+	scripts/collect/verify_dns_posture.py \
+	scripts/collect/site_content.py \
+	scripts/collect/resolve_missing_sites.py \
 	scripts/collect/eurepoc.py
+
+# How the reverse direction of guard-frozen recognises a network call. Extended
+# for subprocess/dig when verify_dns_posture.py was added: that file reaches the
+# network by shelling out to dig, which matched none of the original four
+# patterns, so the guard would have certified it as analysis code. A detector
+# that only knows the idioms already in the repo goes stale the first time
+# someone reaches the network a new way.
+NETWORK_IDIOMS := requests\.\|urlopen\|dns\.resolver\|check_domains\|subprocess\|\"dig\"
 
 # Outputs of those collectors. The analysis reads these and never the network.
 FROZEN_INPUTS := \
 	data/institution_domains.csv \
 	data/institution_dns_posture.csv \
+	data/institution_site_content.csv \
+	data/domain_control_review.csv \
+	data/institution_sites_resolved.csv \
+	data/institution_sites_review.csv \
 	data/eurepoc_political_incidents.csv \
 
 .PHONY: guard-frozen
@@ -44,7 +59,7 @@ guard-frozen: ## Assert no build target runs a collector
 	for f in scripts/collect/*.py; do \
 		[ -e "$$f" ] || continue; \
 		case " $(FROZEN_COLLECTORS) " in *" $$f "*) continue;; esac; \
-		if grep -lq "requests\.\|urlopen\|dns\.resolver\|check_domains" $$f 2>/dev/null; then \
+		if grep -lq "$(NETWORK_IDIOMS)" $$f 2>/dev/null; then \
 			echo "  FAIL: $$f makes network calls but is not in FROZEN_COLLECTORS"; \
 			fail=1; \
 		fi; \
@@ -93,6 +108,23 @@ check-disclosure: ## Fail if an exposure table names a single institution
 	done; \
 	if [ $$fail -eq 1 ]; then exit 1; fi; \
 	echo "  ok: no exposure table names an institution"
+
+########################################################################
+# Analysis
+########################################################################
+.PHONY: tables
+tables: ## Regenerate every figure the README quotes
+	@echo "==> $@"
+	@$(PY) analysis/posture_tables.py
+
+.PHONY: check-readme
+check-readme: ## Fail if a README figure is not in the generated tables
+	@echo "==> $@"
+	@$(PY) analysis/check_readme.py
+
+.PHONY: check
+check: guard-frozen check-inputs check-disclosure tables check-readme ## Run every gate
+	@echo "\n==> all gates passed"
 
 .PHONY: setup
 setup: ## Create the venv

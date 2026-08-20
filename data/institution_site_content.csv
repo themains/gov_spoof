@@ -1,0 +1,526 @@
+domain,http_status,final_host,title,flag,error,checked_date,source_id,generic_tld,review
+admin.ch,403.0,admin.ch,Access Denied,,,2026-08-20,site_content,False,False
+akorda.kz,200.0,akorda.kz,Бастапқы бет &mdash; Қазақстан Республикасы Президентінің ресми сайты,,,2026-08-20,site_content,False,False
+al.gov.mo,200.0,al.gov.mo,澳門特別行政區立法會 Assembleia Legislativa da RAEM,,,2026-08-20,site_content,False,False
+alemarahenglish.af,403.0,alemarahenglish.af,Just a moment...,,,2026-08-20,site_content,False,False
+alkotmanybirosag.hu,200.0,alkotmanybirosag.hu,Alkotmánybíróság | Kezdőlap,,,2026-08-20,site_content,False,False
+althingi.is,403.0,althingi.is,Just a moment...,,,2026-08-20,site_content,False,False
+aph.gov.au,403.0,aph.gov.au,WAF Block Page,,,2026-08-20,site_content,False,False
+apn-dz.org,200.0,apn-dz.org,æµ®æ°èª¿æ» æ¢åµ ä½æé æ ¼å®ã®ä¼çµ±ããæ¢åµäºåæã¢ã¼ã¬ã¹,,,2026-08-20,site_content,True,True
+areiospagos.gr,200.0,areiospagos.gr,¢ñåéïò ÐÜãïò - Areios Pagos - Supreme Court of Greece,,,2026-08-20,site_content,False,False
+argentina.gob.ar,200.0,argentina.gob.ar,Inicio | Argentina.gob.ar,,,2026-08-20,site_content,False,False
+asamblea.go.cr,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+asamblea.gob.ni,,,,,ConnectionError,2026-08-20,site_content,False,False
+asamblea.gob.pa,,,,,SSLError,2026-08-20,site_content,False,False
+asamblea.gob.sv,,,,,SSLError,2026-08-20,site_content,False,False
+asambleanacional.gob.ec,200.0,asambleanacional.gob.ec,Asamblea Nacional del Ecuador | Asamblea Nacional,,,2026-08-20,site_content,False,False
+asambleanacionalvenezuela.org,200.0,asambleanacionalvenezuela.org,ALEXISTOGEL: Pilihan Terbaik Bandar Togel Online dengan Agen Toto Resmi Terlengkap #1,gambling,,2026-08-20,site_content,True,True
+assemblee-nationale.bj,200.0,assemblee-nationale.bj,Assemblée Nationale du Bénin,,,2026-08-20,site_content,False,False
+assemblee-nationale.dj,,,,,ConnectionError,2026-08-20,site_content,False,False
+assemblee-nationale.ml,403.0,assemblee-nationale.ml,Attention Required! | Cloudflare,,,2026-08-20,site_content,False,False
+assemblee-nationale.sn,200.0,assemblee-nationale.sn,RouterOS router configuration page,,,2026-08-20,site_content,False,False
+assemblee-nationale.td,,,,,ConnectionError,2026-08-20,site_content,False,False
+assemblee-nationale.tg,403.0,assemblee-nationale.tg,Just a moment...,,,2026-08-20,site_content,False,False
+assemblee.ne,,,,,ConnectionError,2026-08-20,site_content,False,False
+assembleenationale.bf,200.0,assembleenationale.bf,Assemblée législative de transition,,,2026-08-20,site_content,False,False
+assembleenationale.mr,,,,,ConnectionError,2026-08-20,site_content,False,False
+assembly.gm,200.0,assembly.gm,Home - National Assembly of The Gambia,,,2026-08-20,site_content,False,False
+assembly.go.kr,200.0,assembly.go.kr,대한민국 국회 홈페이지,,,2026-08-20,site_content,False,False
+assembly.gov.fk,200.0,assembly.gov.fk,Home,,,2026-08-20,site_content,False,False
+assembly.gov.vc,200.0,assembly.gov.vc,House of Assembly,,,2026-08-20,site_content,False,False
+australia.gov.au,200.0,my.gov.au,Find government payments and services | myGov,,,2026-08-20,site_content,False,False
+bangabhaban.gov.bd,,,,,SSLError,2026-08-20,site_content,False,False
+bangladesh.gov.bd,200.0,bangladesh.gov.bd,হোম | বাংলাদেশ জাতীয় তথ্য বাতায়ন,,,2026-08-20,site_content,False,False
+barbadosparliament.com,200.0,barbadosparliament.com,The Barbados Parliament | One Of The Oldest Constitutions In The Commonwealth,,,2026-08-20,site_content,True,True
+beehive.govt.nz,200.0,beehive.govt.nz,,,,2026-08-20,site_content,False,False
+bger.ch,200.0,bger.ch,Willkommen auf der Website des Schweizerischen Bundesgerichts,,,2026-08-20,site_content,False,False
+big5.www.gov.cn,200.0,big5.www.gov.cn,中國政府網_中央人民政府門戶網站,,,2026-08-20,site_content,False,False
+bsg.bund.de,200.0,bsg.bund.de,Bundessozialgericht - Startseite,,,2026-08-20,site_content,False,False
+bundesarbeitsgericht.de,200.0,bundesarbeitsgericht.de,Bundesarbeitsgericht | aktuelle Entscheidungen im Arbeitsrecht,,,2026-08-20,site_content,False,False
+bundesfinanzhof.de,200.0,bundesfinanzhof.de,Startseite&nbsp;&#124; Bundesfinanzhof,,,2026-08-20,site_content,False,False
+bundesgerichtshof.de,200.0,bundesgerichtshof.de,Der Bundesgerichtshof - Startseite,,,2026-08-20,site_content,False,False
+bundeskanzleramt.gv.at,200.0,bundeskanzleramt.gv.at,Bundeskanzleramt &Ouml;sterreich,,,2026-08-20,site_content,False,False
+bundespraesident.at,200.0,bundespraesident.at,www.bundespraesident.at,,,2026-08-20,site_content,False,False
+bundespraesident.de,200.0,bundespraesident.de,Der Bundespräsident - Startseite,,,2026-08-20,site_content,False,False
+bundesrat.de,200.0,bundesrat.de,Bundesrat - Startseite,,,2026-08-20,site_content,False,False
+bundesregierung.de,200.0,bundesregierung.de,Die Bundesregierung informiert | Startseite,,,2026-08-20,site_content,False,False
+bundestag.de,200.0,bundestag.de,Startseite - Deutscher Bundestag,,,2026-08-20,site_content,False,False
+bundesverfassungsgericht.de,200.0,bundesverfassungsgericht.de,Bundesverfassungsgericht - Startseite,,,2026-08-20,site_content,False,False
+bverwg.de,200.0,bverwg.de,Startseite | Bundesverwaltungsgericht,,,2026-08-20,site_content,False,False
+bvi.gov.vg,200.0,gov.vg,Homepage | GOV.VG,,,2026-08-20,site_content,False,False
+cabinet.gov.eg,200.0,cabinet.gov.eg,&#x631;&#x626;&#x627;&#x633;&#x629; &#x645;&#x62C;&#x644;&#x633; &#x627;&#x644;&#x648;&#x632;&#x631;&#x627;&#x621;,,,2026-08-20,site_content,False,False
+canada.ca,,,,,ReadTimeout,2026-08-20,site_content,False,False
+carthage.tn,404.0,carthage.tn,,,,2026-08-20,site_content,False,False
+casareal.es,200.0,casareal.es,InicioCastellano - Casa Real,,,2026-08-20,site_content,False,False
+casarosada.gob.ar,200.0,casarosada.gob.ar,Casa Rosada,,,2026-08-20,site_content,False,False
+cass.be,200.0,cass.be,Home,,,2026-08-20,site_content,False,False
+ccomptes.fr,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+ccourt.go.kr,,,,,ReadTimeout,2026-08-20,site_content,False,False
+ccu.gov.ua,200.0,ccu.gov.ua,Конституційний Суд України | Офіційний вебсайт,,,2026-08-20,site_content,False,False
+cfsm.gov.fm,200.0,cfsm.gov.fm,FSM Congress &#8211; FSM Legislative Branch,,,2026-08-20,site_content,False,False
+chd.lu,200.0,chd.lu,Page d&#039;accueil | Chambre des Députés du Grand-Duché de Luxembourg,,,2026-08-20,site_content,False,False
+communication.gouv.ht,200.0,communication.gouv.ht,Le portail officiel de l&#039;information gouvernementale,,,2026-08-20,site_content,False,False
+concourt.am,200.0,concourt.am,Սահմանադրական դատարան,,,2026-08-20,site_content,False,False
+concourt.org.za,200.0,concourt.org.za,Home,,,2026-08-20,site_content,False,False
+congreso.cl,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+congreso.gob.ar,,,,,SSLError,2026-08-20,site_content,False,False
+congreso.gob.gt,200.0,congreso.gob.gt,,,,2026-08-20,site_content,False,False
+congreso.gob.pe,,,,,ConnectionError,2026-08-20,site_content,False,False
+congreso.gov.py,,,,,ConnectionError,2026-08-20,site_content,False,False
+congresonacional.hn,200.0,congresonacional.hn,Congreso Nacional de Honduras,,,2026-08-20,site_content,False,False
+congress.gov,403.0,congress.gov,Just a moment...,,,2026-08-20,site_content,False,False
+congressodistato.sm,200.0,congressodistato.sm,Congresso di Stato di San Marino,,,2026-08-20,site_content,False,False
+congressonacional.leg.br,,,,,ConnectionError,2026-08-20,site_content,False,False
+conseil-constitutionnel.fr,200.0,conseil-constitutionnel.fr,Page d&#039;accueil | Conseil constitutionnel,,,2026-08-20,site_content,False,False
+conseil-etat.fr,200.0,conseil-etat.fr,Accueil - Conseil d'État,,,2026-08-20,site_content,False,False
+conseil-national.mc,,,,,SSLError,2026-08-20,site_content,False,False
+consellgeneral.ad,200.0,consellgeneral.ad,Inici &mdash;,,,2026-08-20,site_content,False,False
+consigliograndeegenerale.sm,200.0,consigliograndeegenerale.sm,Home - Consiglio Grande e Generale,,,2026-08-20,site_content,False,False
+const-court.be,200.0,const-court.be,Language selection,,,2026-08-20,site_content,False,False
+constcourt.ge,200.0,constcourt.ge,საქართველოს საკონსტიტუციო სასამართლო,,,2026-08-20,site_content,False,False
+cortedicassazione.it,200.0,cortedicassazione.it,Corte Suprema di Cassazione,,,2026-08-20,site_content,False,False
+cortenacional.gob.ec,,,,,ConnectionError,2026-08-20,site_content,False,False
+cortesgenerales.es,,,,,ConnectionError,2026-08-20,site_content,False,False
+councils.gov.bn,401.0,councils.gov.bn,,,,2026-08-20,site_content,False,False
+courdecassation.fr,200.0,courdecassation.fr,,,,2026-08-20,site_content,False,False
+coursupreme.cm,200.0,coursupreme.cm,Cour Supreme du Cameroun - Bienvenue sur le site web,,,2026-08-20,site_content,False,False
+coursupreme.dz,200.0,coursupreme.dz,الرئيسية - المحكمة العليا,,,2026-08-20,site_content,False,False
+court.gov.bs,,,,,ConnectionError,2026-08-20,site_content,False,False
+court.gov.cn,,,,,ConnectionError,2026-08-20,site_content,False,False
+courts.act.gov.au,403.0,courts.act.gov.au,Just a moment...,,,2026-08-20,site_content,False,False
+courts.go.jp,,,,,ConnectionError,2026-08-20,site_content,False,False
+courts.gov.ps,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+courtsofnz.govt.nz,200.0,courtsofnz.govt.nz,Home &mdash; Courts of New Zealand,,,2026-08-20,site_content,False,False
+csjn.gov.ar,200.0,csjn.gov.ar,Corte Suprema de Justicia de la Naci&oacute;n - Inicio,,,2026-08-20,site_content,False,False
+ctguyane.fr,200.0,ctguyane.fr,Bienvenue sur le site de la Collectivité Territoriale de Guyane - Collectivité Territoriale de Guyane,,,2026-08-20,site_content,False,False
+cubagob.cu,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+cyprus.gov.cy,403.0,gov.cy,Azure WAF,,,2026-08-20,site_content,False,False
+da.gov.kw,200.0,da.gov.kw,الديوان الأميري - الصفحة الرئيسية,,,2026-08-20,site_content,False,False
+detsis.gov.tr,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+dna.sr,200.0,dna.sr,De Nationale Assemblee,,,2026-08-20,site_content,False,False
+dolat.ir,200.0,dolat.ir,,,,2026-08-20,site_content,False,False
+domstol.dk,403.0,domstol.dk,Just a moment...,,,2026-08-20,site_content,False,False
+domstol.no,200.0,domstol.no,Norges domstoler,,,2026-08-20,site_content,False,False
+domstol.se,200.0,domstol.se,Sveriges Domstolar,,,2026-08-20,site_content,False,False
+dz-rs.si,,,,,ConnectionError,2026-08-20,site_content,False,False
+eccourts.org,200.0,eccourts.org,Eastern Caribbean Supreme Court,,,2026-08-20,site_content,True,True
+editorialshindi.in,200.0,editorialshindi.in,Glory Casino - Online Gambling Venue in Bangladesh,gambling,,2026-08-20,site_content,False,True
+eduskunta.fi,200.0,eduskunta.fi,Eduskunta,,,2026-08-20,site_content,False,False
+el-mouradia.dz,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+elysee.fr,200.0,elysee.fr,Bienvenue sur le site de l&#039;Élysée,,,2026-08-20,site_content,False,False
+emansion.gov.lr,200.0,emansion.gov.lr,Home | The Executive Mansion,,,2026-08-20,site_content,False,False
+en.kremlin.ru,200.0,en.kremlin.ru,President of Russia,,,2026-08-20,site_content,False,False
+en.npc.gov.cn.cdurl.cn,200.0,en.npc.gov.cn.cdurl.cn,The National People's Congress of the People's Republic of China,,,2026-08-20,site_content,False,False
+en.president.az,200.0,president.az,Official web-site of President of Azerbaijan Republic,,,2026-08-20,site_content,False,False
+english.court.gov.cn,200.0,english.court.gov.cn,The Supreme People's Court Of The People's Republic Of China,,,2026-08-20,site_content,False,False
+english.forseti.is,,,,,ConnectionError,2026-08-20,site_content,False,False
+english.gov.cn,200.0,english.www.gov.cn,The State Council of the People's Republic of China,,,2026-08-20,site_content,False,False
+english.www.gov.cn,200.0,english.www.gov.cn,The State Council of the People's Republic of China,,,2026-08-20,site_content,False,False
+es.presidencia.gov.co,,,,,ConnectionError,2026-08-20,site_content,False,False
+ey.gov.tw,,,,,ConnectionError,2026-08-20,site_content,False,False
+fed-parl.be,200.0,fed-parl.be,Het federale Parlement van België - Le parlement fédéral de la Belgique,,,2026-08-20,site_content,False,False
+federale-regering.be,403.0,federale-regering.be,Access Denied,,,2026-08-20,site_content,False,False
+folkatingid.dk,403.0,folkatingid.dk,Just a moment...,,,2026-08-20,site_content,False,False
+folketingi.dk,403.0,folketingi.dk,Just a moment...,,,2026-08-20,site_content,False,False
+ft.dk,403.0,ft.dk,Just a moment...,,,2026-08-20,site_content,False,False
+gambia.gov.gm,200.0,gambia.gov.gm,The Official Website of The Government of The Gambia &#8211; The Official Website of The Government of The Gambia,,,2026-08-20,site_content,False,False
+gg.gov.ag,,,,,SSLError,2026-08-20,site_content,False,False
+ghana.gov.gh,200.0,ghana.gov.gh:443,Ghana.GOV : The Ghana Government Official Web Portal | Ghana.GOV,,,2026-08-20,site_content,False,False
+gjykataelarte.gov.al,200.0,gjykataelarte.gov.al,,,,2026-08-20,site_content,False,False
+gjykatakushtetuese.gov.al,200.0,gjykatakushtetuese.gov.al,GJYKATA KUSHTETUESE &#8211; Gjykata Kushtetuese e Republikës së Shqipërisë,,,2026-08-20,site_content,False,False
+global.tbmm.gov.tr,200.0,global.tbmm.gov.tr,,,,2026-08-20,site_content,False,False
+gob.mx,200.0,gob.mx,Challenge Validation,,,2026-08-20,site_content,False,False
+gobiernoenlinea.gob.ve,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+gouv.mc,200.0,gouv.mc,Portail Officiel du Gouvernement Princier de Monaco,,,2026-08-20,site_content,False,False
+gouv.ne,,,,,ConnectionError,2026-08-20,site_content,False,False
+gouvernement-federal.be,403.0,gouvernement-federal.be,Access Denied,,,2026-08-20,site_content,False,False
+gouvernement.lu,200.0,gouvernement.lu,Le gouvernement luxembourgeois,,,2026-08-20,site_content,False,False
+gov.am,200.0,gov.am,Հայաստանի Հանրապետության Կառավարություն,,,2026-08-20,site_content,False,False
+gov.bb,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.bm,,,,,SSLError,2026-08-20,site_content,False,False
+gov.br,200.0,gov.br,GOV.BR,,,2026-08-20,site_content,False,False
+gov.cn,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.fm,200.0,gov.fm,FSM Government &#8211; FSM Government,,,2026-08-20,site_content,False,False
+gov.ge,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+gov.gg,200.0,gov.gg,GOV.GG - States of Guernsey,,,2026-08-20,site_content,False,False
+gov.hk,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.ie,403.0,gov.ie,ERROR: The request could not be satisfied,,,2026-08-20,site_content,False,False
+gov.im,200.0,gov.im,Request Rejected,,,2026-08-20,site_content,False,False
+gov.kg,,,,,SSLError,2026-08-20,site_content,False,False
+gov.kr,200.0,gov.kr,정부24,,,2026-08-20,site_content,False,False
+gov.ky,200.0,gov.ky,Official Cayman Islands Government Website - GOV.KY - CIG,,,2026-08-20,site_content,False,False
+gov.me,200.0,gov.me,Vlada Crne Gore - GOV.ME,,,2026-08-20,site_content,False,False
+gov.mo,200.0,gov.mo,澳門特別行政區政府入口網站 &#8211; 澳門特別行政區政府入口網站,,,2026-08-20,site_content,False,False
+gov.nu,200.0,gov.nu,The Government of Niue | Home,,,2026-08-20,site_content,False,False
+gov.ph,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.pl,200.0,gov.pl,Portal Gov.pl,,,2026-08-20,site_content,False,False
+gov.ro,200.0,gov.ro,Guvernul României,,,2026-08-20,site_content,False,False
+gov.ru,200.0,gov.ru,ÑÅÐÂÅÐ ÎÐÃÀÍÎÂ ÃÎÑÓÄÀÐÑÒÂÅÍÍÎÉ ÂËÀÑÒÈ ÐÎÑÑÈÈ,,,2026-08-20,site_content,False,False
+gov.rw,200.0,gov.rw,Welcome to Rwanda,,,2026-08-20,site_content,False,False
+gov.sg,200.0,gov.sg,Home | gov.sg,,,2026-08-20,site_content,False,False
+gov.sy,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.ug,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.uk,200.0,gov.uk,Welcome to GOV.UK,,,2026-08-20,site_content,False,False
+gov.uz,200.0,gov.uz,O‘zbekiston Respublikasi Hukumat portali,,,2026-08-20,site_content,False,False
+gov.vn,,,,,ConnectionError,2026-08-20,site_content,False,False
+gov.za,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+govern.ad,200.0,govern.ad,Portal oficial del Govern d&#39;Andorra - Govern d’Andorra,,,2026-08-20,site_content,False,False
+government.ae,200.0,u.ae,&#x627;&#x644;&#x631;&#x626;&#x64A;&#x633;&#x64A;&#x629; | &#x627;&#x644;&#x645;&#x646;&#x635;&#x629; &#x627;&#x644;&#x631;&#x633;&#x645;&#x64A;&#x629; &#x644;&#x62D;&#x643;&#x648;&#x645;&#x629; &#x62,,,2026-08-20,site_content,False,False
+government.bg,200.0,government.bg,Министерски съвет Начало,,,2026-08-20,site_content,False,False
+government.gov.by,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+government.gov.gr,403.0,government.gov.gr,Access Denied,,,2026-08-20,site_content,False,False
+government.kz,200.0,primeminister.kz,Қазақстан Республикасы Премьер-министрінің ресми ақпараттық ресурсы,,,2026-08-20,site_content,False,False
+government.nl,200.0,government.nl,Information from the Government of the Netherlands | Government.nl,,,2026-08-20,site_content,False,False
+government.ru,200.0,government.ru,Правительство России официальный сайт,,,2026-08-20,site_content,False,False
+government.se,403.0,government.se,Just a moment...,,,2026-08-20,site_content,False,False
+governo.gov.ao,200.0,governo.gov.ao,Portal Oficial do Governo de Angola,,,2026-08-20,site_content,False,False
+governo.it,200.0,governo.it,www.governo.it | Governo Italiano Presidenza del Consiglio dei Ministri,,,2026-08-20,site_content,False,False
+govt.nz,,,,,ConnectionError,2026-08-20,site_content,False,False
+grenadaparliament.gd,200.0,grenadaparliament.gd,Grenada Parliament &#8211; The official website of the Grenada Parliament,,,2026-08-20,site_content,False,False
+guatemala.gob.gt,403.0,guatemala.gob.gt,Just a moment...,,,2026-08-20,site_content,False,False
+gub.uy,200.0,gub.uy,Sitio oficial de la República Oriental del Uruguay - GUB.UY,,,2026-08-20,site_content,False,False
+guineaecuatorialpress.com,200.0,guineaecuatorialpress.com,Página Oficial del Gobierno de la República de Guinea Ecuatorial,,,2026-08-20,site_content,True,True
+haestirettur.is,200.0,island.is:443,Hæstiréttur Íslands,,,2026-08-20,site_content,False,False
+hcourt.gov.au,,,,,ReadTimeout,2026-08-20,site_content,False,False
+hcourtog.com,,,,,ConnectionError,2026-08-20,site_content,True,True
+hellenicparliament.gr,403.0,hellenicparliament.gr,Access Denied,,,2026-08-20,site_content,False,False
+hkcfa.hk,,,,,ConnectionError,2026-08-20,site_content,False,False
+hogeraad.nl,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+hogstaforvaltningsdomstolen.se,200.0,domstol.se,H&#xF6;gsta f&#xF6;rvaltningsdomstolen,,,2026-08-20,site_content,False,False
+houseofassembly.gov.dm,200.0,houseofassembly.gov.dm,House of Assembly,,,2026-08-20,site_content,False,False
+hrad.cz,200.0,hrad.cz,Pražský hrad - Prezident České republiky,,,2026-08-20,site_content,False,False
+ikulu.go.tz,500.0,ikulu.go.tz,,,,2026-08-20,site_content,False,False
+ina.gl,200.0,ina.gl,ina.gl | Inatsisartut,,,2026-08-20,site_content,False,False
+indonesia.go.id,200.0,indonesia.go.id,Portal Informasi Indonesia - Sumber Resmi Informasi Pemerintah,,,2026-08-20,site_content,False,False
+info.gouv.fr,403.0,info.gouv.fr,Just a moment...,,,2026-08-20,site_content,False,False
+istana.gov.sg,200.0,istana.gov.sg,Home | The Istana,,,2026-08-20,site_content,False,False
+istananegara.gov.my,200.0,istananegara.gov.my,Istana Negara,,,2026-08-20,site_content,False,False
+japarliament.gov.jm,200.0,japarliament.gov.jm,Houses of Parliament,,,2026-08-20,site_content,False,False
+judicial.gov.tw,,,,,SSLError,2026-08-20,site_content,False,False
+judiciary.gov.gm,,,,,SSLError,2026-08-20,site_content,False,False
+judiciary.gov.rw,200.0,judiciary.gov.rw,Home,,,2026-08-20,site_content,False,False
+judiciary.gov.sg,200.0,judiciary.gov.sg:443,Singapore Courts,,,2026-08-20,site_content,False,False
+justice.gov.gu,,,,,ConnectionError,2026-08-20,site_content,False,False
+justice.public.lu,200.0,justice.public.lu,La Justice - Luxembourg,,,2026-08-20,site_content,False,False
+kabinet.gov.my,200.0,kabinet.gov.my:443,Laman Web Rasmi BKPP JPM,,,2026-08-20,site_content,False,False
+kabinet.sr.org,,,,,ConnectionError,2026-08-20,site_content,True,True
+kantei.go.jp,200.0,kantei.go.jp,é¦ç¸å®é¸,,,2026-08-20,site_content,False,False
+keh.hu,200.0,sandorpalota.hu,FŐOLDAL | Sándor-palota,,,2026-08-20,site_content,False,False
+kehakiman.gov.my,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+kenesh.kg,200.0,kenesh.kg,Кыргыз Республикасынын Жогорку Кеңеши,,,2026-08-20,site_content,False,False
+kho.fi,200.0,kho.fi:443,Etusivu - Korkein hallinto-oikeus,,,2026-08-20,site_content,False,False
+kingshouse.gov.jm,403.0,kingshouse.gov.jm,Just a moment...,,,2026-08-20,site_content,False,False
+kmu.gov.ua,,,,,ConnectionError,2026-08-20,site_content,False,False
+kna.kw,200.0,kna.kw,مجلس الأمة دولة الكويت - الرئيسية,,,2026-08-20,site_content,False,False
+kongehuset.no,200.0,kongehuset.no,Det Norske Kongehus,,,2026-08-20,site_content,False,False
+korkeinoikeus.fi,200.0,korkeinoikeus.fi:443,Etusivu - Korkein oikeus,,,2026-08-20,site_content,False,False
+kormany.hu,200.0,kormany.hu,Magyarország Kormánya - Főoldal | Magyarország Kormánya,,,2026-08-20,site_content,False,False
+kryeministri.rks-gov.net,,,,,ReadTimeout,2026-08-20,site_content,True,True
+ksrf.ru,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+kunaicho.go.jp,,,,,ConnectionError,2026-08-20,site_content,False,False
+kuvendikosoves.org,403.0,kuvendikosoves.org,Just a moment...,,,2026-08-20,site_content,True,True
+la-renaissance.cf,,,,,ConnectionError,2026-08-20,site_content,False,False
+lagtinget.ax,500.0,lagtinget.ax,500 - Internal server error.,,,2026-08-20,site_content,False,False
+lamoncloa.gob.es,200.0,lamoncloa.gob.es,La Moncloa. Gobierno de España,,,2026-08-20,site_content,False,False
+landtag.li,200.0,landtag.li,Landtag des Fürstentums Liechtenstein,,,2026-08-20,site_content,False,False
+legco.gov.hk,,,,,SSLError,2026-08-20,site_content,False,False
+legvi.org,200.0,legvi.org,Home - Legislature of the United States Virgin Islands,,,2026-08-20,site_content,True,True
+leparlementhaitien.info,200.0,leparlementhaitien.info,Parlement,,,2026-08-20,site_content,True,True
+logting.fo,200.0,logting.fo,,,,2026-08-20,site_content,False,False
+lp.gov.lb,,,,,ReadTimeout,2026-08-20,site_content,False,False
+lrkt.lt,403.0,lrkt.lt,Just a moment...,,,2026-08-20,site_content,False,False
+lrs.lt,403.0,lrs.lt,Just a moment...,,,2026-08-20,site_content,False,False
+lrv.lt,403.0,lrv.lt,Just a moment...,,,2026-08-20,site_content,False,False
+ly.gov.tw,,,,,ConnectionError,2026-08-20,site_content,False,False
+mahkamahagung.go.id,403.0,mahkamahagung.go.id,Just a moment...,,,2026-08-20,site_content,False,False
+main.knesset.gov.il,247.0,main.knesset.gov.il,,,,2026-08-20,site_content,False,False
+majlis.gov.mv,403.0,majlis.gov.mv,Just a moment...,,,2026-08-20,site_content,False,False
+mauritiusassembly.govmu.org,,,,,ReadTimeout,2026-08-20,site_content,True,True
+meclis.gov.az,200.0,meclis.gov.az,,,,2026-08-20,site_content,False,False
+minfo.gov.ps,,,,,ConnectionError,2026-08-20,site_content,False,False
+minzu.rep.kp,,,,,ConnectionError,2026-08-20,site_content,False,False
+monarchie.lu,200.0,monarchie.lu,Site officiel de la Cour grand-ducale de Luxembourg,,,2026-08-20,site_content,False,False
+mpr.go.id,200.0,mpr.go.id,MPR RI,,,2026-08-20,site_content,False,False
+na.gov.la,200.0,na.gov.la,ໜ້າຫລັກ - The National Assembly of Lao PDR,,,2026-08-20,site_content,False,False
+naalakkersuisut.gl,200.0,naalakkersuisut.gl,Nittartagaq - naalakkersuisut.gl,,,2026-08-20,site_content,False,False
+nass.gov.ng,200.0,nass.gov.ng,National Assembly of Nigeria | People's Parliament,,,2026-08-20,site_content,False,False
+nationalassembly.gov.bz,200.0,belizeparliament.bz,National Assembly of Belize,,,2026-08-20,site_content,False,False
+nationalassembly.sc,200.0,nationalassembly.sc,The National Assembly of Seychelles,,,2026-08-20,site_content,False,False
+naurugov.nr,200.0,naurugov.nr,The Government of the Republic of Naoero - The Government of the Republic of Nauru,,,2026-08-20,site_content,False,False
+nepalgov.gov.np,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+norfolkislandgovernment.com,,,,,ReadTimeout,2026-08-20,site_content,True,True
+npc.gov.cn,200.0,npc.gov.cn,ä¸­å½äººå¤§ç½,,,2026-08-20,site_content,False,False
+nrsr.sk,,,,,ConnectionError,2026-08-20,site_content,False,False
+nsoud.cz,200.0,nsoud.cz,Nejvyšší soud České republiky — Nejvyšší soud vymezil hranice mezi sexuálním útokem a znásilněním po novele trestního zákoníku,,,2026-08-20,site_content,False,False
+nssoud.cz,200.0,nssoud.cz,Nejvyšší správní soud — Oficiální webové stránky,,,2026-08-20,site_content,False,False
+oireachtas.ie,200.0,oireachtas.ie,Houses of the Oireachtas website,,,2026-08-20,site_content,False,False
+op.gov.gm,200.0,op.gov.gm,Home | Office of The President | State House of The Gambia,,,2026-08-20,site_content,False,False
+op.gov.gy,200.0,op.gov.gy,"Office of the President, Guyana &#8211; Cooperative Republic of Guyana, Government, President&#039;s Office, 9th Executive President of Guyana, Dr. Mohamed Irfaan Ali",,,2026-08-20,site_content,False,False
+op.gov.na,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+opc.gov.zw,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+pakistan.gov.pk,,,,,SSLError,2026-08-20,site_content,False,False
+pakistanpressfoundation.org,200.0,pakistanpressfoundation.org,"Pakistan Press Foundation (PPF) &#8211; An Independent Media Research, Documentation and Training Center",,,2026-08-20,site_content,True,True
+pal-plc.org,200.0,pal-plc.org,المجلس التشريعي الفلسطيني,,,2026-08-20,site_content,True,True
+palais.mc,200.0,palais.mc,Palais Princier de Monaco,,,2026-08-20,site_content,False,False
+palaugov.pw,403.0,palaugov.pw,,,,2026-08-20,site_content,False,False
+palauoek.com,,,,,ConnectionError,2026-08-20,site_content,True,True
+palausupremecourt.net,404.0,palausupremecourt.net,Not Found,,,2026-08-20,site_content,True,True
+palemene.ws,200.0,palemene.ws,Palemene o Samoa,,,2026-08-20,site_content,False,False
+parl.ca,200.0,parl.ca,Parliament of Canada - Parlement du Canada,,,2026-08-20,site_content,False,False
+parlam.kz,200.0,parlam.kz,&#1178;&#1072;&#1079;&#1072;&#1179;&#1089;&#1090;&#1072;&#1085; &#1056;&#1077;&#1089;&#1087;&#1091;&#1073;&#1083;&#1080;&#1082;&#1072;&#1089;&#1099;&#1085;&#1099;&#1187; &#1055;&#1072;&#1088;&#1083;&#,,,2026-08-20,site_content,False,False
+parlament.al,200.0,parlament.al,Kuvendi i ShqipÃ«risÃ«,,,2026-08-20,site_content,False,False
+parlament.ba,200.0,parlament.ba,Parlamentarna skupština BiH,,,2026-08-20,site_content,False,False
+parlament.ch,200.0,parlament.ch,Schweizer Parlament - Startseite,,,2026-08-20,site_content,False,False
+parlament.gov.rs,,,,,ConnectionError,2026-08-20,site_content,False,False
+parlament.gv.at,200.0,parlament.gv.at,Parlament Ãsterreich,,,2026-08-20,site_content,False,False
+parlament.hu,200.0,parlament.hu,CAPTCHA Ellen,,,2026-08-20,site_content,False,False
+parlament.md,403.0,parlament.md,Just a moment...,,,2026-08-20,site_content,False,False
+parlament.mt,403.0,parlament.mt,Just a moment...,,,2026-08-20,site_content,False,False
+parlament.ro,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+parlament.tj,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+parlamento.ao,200.0,parlamento.ao,Assembleia Nacional,,,2026-08-20,site_content,False,False
+parlamento.aw,200.0,parlamento.aw,Home | Parlamento di Aruba,,,2026-08-20,site_content,False,False
+parlamento.cv,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+parlamento.cw,200.0,parlamento.cw,Home | Parlamento di Kòrsou,,,2026-08-20,site_content,False,False
+parlamento.gub.uy,403.0,parlamento.gub.uy,403 Forbidden,,,2026-08-20,site_content,False,False
+parlamento.gw,200.0,parlamento.gw:443,Página Inicial — ASSEMBLEIA NACIONAL POPULAR,,,2026-08-20,site_content,False,False
+parlamento.it,200.0,parlamento.it,parlamento.it,,,2026-08-20,site_content,False,False
+parlamento.mz,200.0,parlamento.mz,Parlamento &#8211; Portal do Parlamento da República de Moçambique,,,2026-08-20,site_content,False,False
+parlamento.pt,200.0,parlamento.pt,Assembleia da República,,,2026-08-20,site_content,False,False
+parlamento.st,200.0,parlamento.st,parlamento.st,,,2026-08-20,site_content,False,False
+parlamento.tl,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+parlamentocubano.gob.cu,400.0,parlamentocubano.gob.cu,,,,2026-08-20,site_content,False,False
+parlement.fr,,,,,ConnectionError,2026-08-20,site_content,False,False
+parlement.ma,403.0,parlement.ma,Just a moment...,,,2026-08-20,site_content,False,False
+parliament.am,200.0,parliament.am,Ազգային ժողով,,,2026-08-20,site_content,False,False
+parliament.bg,200.0,parliament.bg,Parliament.bg,,,2026-08-20,site_content,False,False
+parliament.bm,200.0,parliament.bm,Bermuda Parliament,,,2026-08-20,site_content,False,False
+parliament.bt,,,,,SSLError,2026-08-20,site_content,False,False
+parliament.cy,200.0,parliament.cy,House of Representatives - Βουλή των Αντιπροσώπων,,,2026-08-20,site_content,False,False
+parliament.ge,200.0,parliament.ge,საქართველოს პარლამენტი,,,2026-08-20,site_content,False,False
+parliament.gh,200.0,parliament.gh,Parliament of Ghana,,,2026-08-20,site_content,False,False
+parliament.gi,200.0,parliament.gi,Gibraltar Parliament,,,2026-08-20,site_content,False,False
+parliament.go.ke,200.0,parliament.go.ke,Parliament of Kenya | The Kenyan Parliament Website,,,2026-08-20,site_content,False,False
+parliament.go.th,,,,,ConnectionError,2026-08-20,site_content,False,False
+parliament.go.tz,200.0,parliament.go.tz,BUNGE | Mwanzo,,,2026-08-20,site_content,False,False
+parliament.go.ug,200.0,parliament.go.ug,Home | Parliament of Uganda,,,2026-08-20,site_content,False,False
+parliament.gov.bd,,,,,ConnectionError,2026-08-20,site_content,False,False
+parliament.gov.bw,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+parliament.gov.ck,200.0,parliament.gov.ck,Parliament of the Cook Islands,,,2026-08-20,site_content,False,False
+parliament.gov.fj,307.0,parliament.gov.fj,You are being redirected...,,,2026-08-20,site_content,False,False
+parliament.gov.gy,200.0,parliament.gov.gy,National Assembly of the Parliament of Guyana | Parliament of Guyana,,,2026-08-20,site_content,False,False
+parliament.gov.ki,,,,,SSLError,2026-08-20,site_content,False,False
+parliament.gov.kn,200.0,parliament.gov.kn,Site is undergoing maintenance,,,2026-08-20,site_content,False,False
+parliament.gov.mw,200.0,parliament.gov.mw,Parliament of Malawi,,,2026-08-20,site_content,False,False
+parliament.gov.np,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+parliament.gov.pg,200.0,parliament.gov.pg,Parliament of Papua New Guinea &#8211; National Parliament,,,2026-08-20,site_content,False,False
+parliament.gov.rw,200.0,parliament.gov.rw,Home,,,2026-08-20,site_content,False,False
+parliament.gov.sb,200.0,parliament.gov.sb,National Parliament of Solomon Islands,,,2026-08-20,site_content,False,False
+parliament.gov.sg,200.0,parliament.gov.sg:443,Parliament of Singapore (PARL),,,2026-08-20,site_content,False,False
+parliament.gov.sl,,,,,SSLError,2026-08-20,site_content,False,False
+parliament.gov.so,200.0,parliament.gov.so,Home - Baarlamaanka Federaalka Soomaliya | Golaha Shacabka BJFS,,,2026-08-20,site_content,False,False
+parliament.gov.sy,,,,,ConnectionError,2026-08-20,site_content,False,False
+parliament.gov.sz,,,,,SSLError,2026-08-20,site_content,False,False
+parliament.gov.to,200.0,parliament.gov.to,Legislative Assembly of Tonga Website,,,2026-08-20,site_content,False,False
+parliament.gov.vu,,,,,SSLError,2026-08-20,site_content,False,False
+parliament.gov.za,,,,,SSLError,2026-08-20,site_content,False,False
+parliament.gov.zm,200.0,parliament.gov.zm,,,,2026-08-20,site_content,False,False
+parliament.govt.lc,200.0,parliament.govt.lc,Parliament of Saint Lucia,,,2026-08-20,site_content,False,False
+parliament.iq,403.0,parliament.iq,Just a moment...,,,2026-08-20,site_content,False,False
+parliament.jo,,,,,ConnectionError,2026-08-20,site_content,False,False
+parliament.lk,200.0,parliament.lk,The Parliament of Sri Lanka,,,2026-08-20,site_content,False,False
+parliament.ls,200.0,parliament.ls,Parliament of Lesotho,,,2026-08-20,site_content,False,False
+parliament.ly,200.0,parliament.ly,مجلس النواب الليبي | Libyan Parliament,,,2026-08-20,site_content,False,False
+parliament.mn,200.0,parliament.mn,&#x41D;&#x4AF;&#x4AF;&#x440; &#x445;&#x443;&#x443;&#x434;&#x430;&#x441;,,,2026-08-20,site_content,False,False
+parliament.ms,200.0,parliament.ms,Montserrat Legislative Assembly &#8211; Montserrat Legislative Assembly,,,2026-08-20,site_content,False,False
+parliament.na,200.0,parliament.na,Namibian Parliament &#8211; Namibian Parliament,,,2026-08-20,site_content,False,False
+parliament.nz,,,,,ConnectionError,2026-08-20,site_content,False,False
+parliament.uk,200.0,parliament.uk,UK Parliament,,,2026-08-20,site_content,False,False
+parlimen.gov.my,200.0,parlimen.gov.my,Portal Rasmi Parlimen Malaysia -,,,2026-08-20,site_content,False,False
+parlzim.gov.zw,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+pj.gov.py,200.0,pj.gov.py,Corte Suprema de Justicia - Poder Judicial,,,2026-08-20,site_content,False,False
+plc.ps,200.0,plc.ps,Account Suspended,,,2026-08-20,site_content,False,False
+pmo.gov.et,200.0,pmo.gov.et,FDRE Office of Prime Minister,,,2026-08-20,site_content,False,False
+poderjudicial.cl,200.0,pjud.cl,Poder Judicial - Inicio,,,2026-08-20,site_content,False,False
+poderjudicial.es,,,,,ConnectionError,2026-08-20,site_content,False,False
+portal.stf.jus.br,403.0,portal.stf.jus.br,403 Forbidden,,,2026-08-20,site_content,False,False
+portaldogoverno.gov.mz,200.0,portaldogoverno.gov.mz,Portal em ManutenÃ§Ã£o â Governo de MoÃ§ambique,,,2026-08-20,site_content,False,False
+portugal.gov.pt,200.0,portugal.gov.pt,XXV Governo Constitucional,,,2026-08-20,site_content,False,False
+pr.gov,200.0,pr.gov,PR.gov | Gobierno de Puerto Rico,,,2026-08-20,site_content,False,False
+prc.cm,200.0,prc.cm,Accueil,,,2026-08-20,site_content,False,False
+predsednik.rs,200.0,predsednik.rs,Председник Републике Србије,,,2026-08-20,site_content,False,False
+predsjednik.hr,200.0,predsjednik.hr,Predsjednik Republike Hrvatske - Zoran Milanović,,,2026-08-20,site_content,False,False
+predsjednik.me,200.0,predsjednik.me,Predsjednik Jakov Milatović,,,2026-08-20,site_content,False,False
+predsjednistvobih.ba,200.0,predsjednistvobih.ba,Izbor jezika,,,2026-08-20,site_content,False,False
+premier-ministre.gov.dz,,,,,SSLError,2026-08-20,site_content,False,False
+presedinte.md,200.0,presedinte.md,Președinția Republicii Moldova,,,2026-08-20,site_content,False,False
+presidence.bj,200.0,presidence.bj,Présidence de la République du Bénin,,,2026-08-20,site_content,False,False
+presidence.ne,200.0,presidence.ne,PrÃ©sidence de la RÃ©publique du Niger,,,2026-08-20,site_content,False,False
+presidencetchad.org,200.0,presidencetchad.org,Présidence de la République du Tchad,,,2026-08-20,site_content,True,True
+presidencia.go.cr,200.0,presidencia.go.cr,Gobierno de Costa Rica | Presidencia de la República de Costa Rica,,,2026-08-20,site_content,False,False
+presidencia.gob.bo,,,,,ConnectionError,2026-08-20,site_content,False,False
+presidencia.gob.hn,403.0,presidencia.gob.hn,DNS points to prohibited IP | presidencia.gob.hn | Cloudflare,,,2026-08-20,site_content,False,False
+presidencia.gob.mx,200.0,gob.mx,Challenge Validation,,,2026-08-20,site_content,False,False
+presidencia.gob.ni,,,,,ConnectionError,2026-08-20,site_content,False,False
+presidencia.gob.pa,200.0,presidencia.gob.pa,,,,2026-08-20,site_content,False,False
+presidencia.gob.pe,200.0,gob.pe,Presidencia de la República del Perú - Presidencia - Plataforma del Estado Peruano,,,2026-08-20,site_content,False,False
+presidencia.gob.sv,200.0,presidencia.gob.sv,Home - Presidencia de la República de El Salvador,,,2026-08-20,site_content,False,False
+presidencia.gob.ve,200.0,presidencia.gob.ve,,,,2026-08-20,site_content,False,False
+presidencia.gov.do,,,,,ConnectionError,2026-08-20,site_content,False,False
+presidencia.gov.ec,,,,,ConnectionError,2026-08-20,site_content,False,False
+presidencia.gov.py,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+presidencia.gub.uy,200.0,gub.uy,Presidencia Uruguay - GUB.UY,,,2026-08-20,site_content,False,False
+presidencia.gw,200.0,presidencia.gw,Início | Presidencia GW,,,2026-08-20,site_content,False,False
+presidencia.pt,200.0,presidencia.pt,S&#237;tio Oficial de Informa&#231;&#227;o da Presid&#234;ncia da Rep&#250;blica Portuguesa,,,2026-08-20,site_content,False,False
+presidenciarepublica.tl,403.0,presidenciarepublica.tl,,,,2026-08-20,site_content,False,False
+presidency.eg,200.0,presidency.eg,الموقع الرسمي لرئاسة الجمهورية-جمهورية مصر العربية,,,2026-08-20,site_content,False,False
+presidency.gov.cy,403.0,gov.cy,Azure WAF,,,2026-08-20,site_content,False,False
+presidency.gov.gh,403.0,presidency.gov.gh,,,,2026-08-20,site_content,False,False
+presidency.gov.lb,200.0,presidency.gov.lb,Presidency of the Lebanese Republic,,,2026-08-20,site_content,False,False
+presidency.gr,403.0,presidency.gr,Access Denied,,,2026-08-20,site_content,False,False
+presidency.ro,503.0,presidency.ro,Verifying your browser...,,,2026-08-20,site_content,False,False
+presidencymaldives.gov.mv,403.0,presidencymaldives.gov.mv,Just a moment...,,,2026-08-20,site_content,False,False
+presidenri.go.id,403.0,presidenri.go.id,Just a moment...,,,2026-08-20,site_content,False,False
+president-ksgov.net,200.0,president-ksgov.net,Ballina - Presidente e Republikës së Kosovës,,,2026-08-20,site_content,True,True
+president.al,403.0,president.al,Just a moment...,,,2026-08-20,site_content,False,False
+president.am,200.0,president.am,Հայաստանի Հանրապետության Նախագահ,,,2026-08-20,site_content,False,False
+president.bg,200.0,president.bg,Президент на Република България,,,2026-08-20,site_content,False,False
+president.ee,200.0,president.ee,,,,2026-08-20,site_content,False,False
+president.ge,200.0,president.ge,საქართველოს პრეზიდენტი,,,2026-08-20,site_content,False,False
+president.go.kr,200.0,president.go.kr,대한민국 청와대,,,2026-08-20,site_content,False,False
+president.gov.by,200.0,president.gov.by,ÐÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ ÑÐ°Ð¹Ñ | ÐÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ Ð¸Ð½ÑÐµÑÐ½ÐµÑ-Ð¿Ð¾ÑÑÐ°Ð» ÐÑÐµÐ·Ð¸Ð´ÐµÐ½ÑÐ° Ð ÐµÑÐ¿ÑÐ±Ð»Ð¸ÐºÐ¸ ÐÐµÐ»Ð°ÑÑÑÑ,,,2026-08-20,site_content,False,False
+president.gov.il,307.0,president.gov.il,You are being redirected...,,,2026-08-20,site_content,False,False
+president.gov.ki,200.0,president.gov.ki,President Taneti Maamau - Home,,,2026-08-20,site_content,False,False
+president.gov.lk,200.0,president.gov.lk,President of Sri Lanka,,,2026-08-20,site_content,False,False
+president.gov.mt,403.0,president.gov.mt,Just a moment...,,,2026-08-20,site_content,False,False
+president.gov.mu,,,,,SSLError,2026-08-20,site_content,False,False
+president.gov.ph,403.0,president.gov.ph,Attention Required! | Cloudflare,,,2026-08-20,site_content,False,False
+president.gov.pk,200.0,president.gov.pk,The President of Pakistan,,,2026-08-20,site_content,False,False
+president.gov.tw,,,,,ConnectionError,2026-08-20,site_content,False,False
+president.gov.ua,403.0,president.gov.ua,Access Denied,,,2026-08-20,site_content,False,False
+president.ie,200.0,president.ie,Welcome | President.ie | President of Ireland,,,2026-08-20,site_content,False,False
+president.ir,200.0,president.ir,پایگاه اطلاع رسانی ریاست‌جمهوری اسلامی ایران,,,2026-08-20,site_content,False,False
+president.kg,200.0,president.kg,Кыргыз Республикасынын Президентинин официалдык сайты,,,2026-08-20,site_content,False,False
+president.lt,403.0,president.lt,Just a moment...,,,2026-08-20,site_content,False,False
+president.lv,,,,,ReadTimeout,2026-08-20,site_content,False,False
+president.mn,403.0,president.mn,Just a moment...,,,2026-08-20,site_content,False,False
+president.ps,403.0,president.ps,Just a moment...,,,2026-08-20,site_content,False,False
+presidentalalimi.net,200.0,presidentalalimi.net,الموقع الرسمي لفخامة الرئيس د.رشاد العليمي رئيس مجلس القيادة الرئاسي,,,2026-08-20,site_content,True,True
+presidentofindia.gov.in,200.0,presidentofindia.gov.in,Home | President of India,,,2026-08-20,site_content,False,False
+presidentofnepal.gov.np,,,,,SSLError,2026-08-20,site_content,False,False
+presidentti.fi,200.0,presidentti.fi,Etusivu - Presidentti,,,2026-08-20,site_content,False,False
+pretsedatel.mk,200.0,pretsedatel.mk,Почетна,,,2026-08-20,site_content,False,False
+prezident.sk,200.0,prezident.sk,Prezident Slovenskej republiky,,,2026-08-20,site_content,False,False
+prezident.tj,200.0,prezident.tj,ÐÐ ÐÐÐÐÐÐÐ¢Ð Ò¶Ð£ÐÒ²Ð£Ð ÐÐ Ð¢ÐÒ¶ÐÐÐÐ¡Ð¢ÐÐ,,,2026-08-20,site_content,False,False
+prezydent.pl,403.0,prezydent.pl,Just a moment...,,,2026-08-20,site_content,False,False
+pyithuhluttaw.gov.mm,,,,,ConnectionError,2026-08-20,site_content,False,False
+quirinale.it,200.0,quirinale.it,Il sito ufficiale della Presidenza della Repubblica,,,2026-08-20,site_content,False,False
+quochoi.vn,200.0,quochoi.vn,,,,2026-08-20,site_content,False,False
+raadvst-consetat.be,403.0,raadvst-consetat.be,Attention Required! | Cloudflare,,,2026-08-20,site_content,False,False
+rada.gov.ua,200.0,rada.gov.ua,Офіційний портал Верховної Ради України,,,2026-08-20,site_content,False,False
+rc.majlis.ir,200.0,rc.majlis.ir,,,,2026-08-20,site_content,False,False
+regeringen.ax,200.0,regeringen.ax,Startsida | Ålands landskapsregering,,,2026-08-20,site_content,False,False
+regeringen.se,200.0,regeringen.se,Startsidan - Regeringen.se,,,2026-08-20,site_content,False,False
+reggenzadellarepubblica.sm,200.0,reggenzadellarepubblica.sm,HOME,,,2026-08-20,site_content,False,False
+regierung.li,200.0,regierung.li,Regierung des Fürstentums Liechtenstein - Startseite,,,2026-08-20,site_content,False,False
+regjeringen.no,403.0,regjeringen.no,Just a moment...,,,2026-08-20,site_content,False,False
+riigikogu.ee,200.0,riigikogu.ee,Riigikogu,,,2026-08-20,site_content,False,False
+rijksoverheid.nl,200.0,rijksoverheid.nl,Informatie van de Rijksoverheid | Rijksoverheid.nl,,,2026-08-20,site_content,False,False
+riksdagen.se,200.0,riksdagen.se,Start | Sveriges riksdag,,,2026-08-20,site_content,False,False
+rmiparliament.org,403.0,rmiparliament.org,,,,2026-08-20,site_content,True,True
+royal.uk,200.0,royal.uk,The official website of the Royal Family | The Royal Family,,,2026-08-20,site_content,False,False
+royaloffice.th,403.0,royaloffice.th,Just a moment...,,,2026-08-20,site_content,False,False
+sabor.hr,200.0,sabor.hr,| Hrvatski sabor,,,2026-08-20,site_content,False,False
+saeima.lv,200.0,saeima.lv,Sākumlapa - Latvijas Republikas Saeima,,,2026-08-20,site_content,False,False
+sangiin.go.jp,,,,,ConnectionError,2026-08-20,site_content,False,False
+sansad.in,200.0,sansad.in,Digital Sansad,,,2026-08-20,site_content,False,False
+satv.tiesa.gov.lv,,,,,ReadTimeout,2026-08-20,site_content,False,False
+sc.judiciary.gov.ph,,,,,SSLError,2026-08-20,site_content,False,False
+scc-csc.gc.ca,200.0,scc-csc.gc.ca,Supreme Court of Canada | Cour suprÃªme du Canada,,,2026-08-20,site_content,False,False
+sccourt.gov.eg,,,,,SSLError,2026-08-20,site_content,False,False
+sci.gov.in,200.0,sci.gov.in,Supreme Court of India | India,,,2026-08-20,site_content,False,False
+scj.ro,,,,,ConnectTimeout,2026-08-20,site_content,False,False
+scjn.gob.mx,200.0,scjn.gob.mx,Suprema Corte de Justicia de la Nación,,,2026-08-20,site_content,False,False
+scourt.go.kr,200.0,scourt.go.kr,index,,,2026-08-20,site_content,False,False
+senado.pr.gov,200.0,senado.pr.gov,Senado de Puerto Rico,,,2026-08-20,site_content,False,False
+shura.qa,200.0,shura.qa,مجلس الشورى، الصفحة الرئيسية,,,2026-08-20,site_content,False,False
+skupstina.me,200.0,skupstina.me,SkupÅ¡tina Crne Gore,,,2026-08-20,site_content,False,False
+sn.pl,200.0,sn.pl,Sąd Najwyższy,,,2026-08-20,site_content,False,False
+sobranie.mk,200.0,sobranie.mk,Собрание на Република Северна Македонија - Почетна,,,2026-08-20,site_content,False,False
+sodisce.si,200.0,sodisce.si,Sodstvo Republike Slovenije,,,2026-08-20,site_content,False,False
+somalia.gov.so,200.0,somalia.gov.so,Federal Republic of Somalia - Federal Republic of Somalia,,,2026-08-20,site_content,False,False
+spp.gov.cn,,,,,ConnectionError,2026-08-20,site_content,False,False
+srbija.gov.rs,200.0,srbija.gov.rs,Влада Републике Србије,,,2026-08-20,site_content,False,False
+statehouse.gov.ng,200.0,statehouse.gov.ng,"The State House, Abuja",,,2026-08-20,site_content,False,False
+statehouse.gov.sc,200.0,statehouse.gov.sc,State House Seychelles | Office of the President,,,2026-08-20,site_content,False,False
+statehouse.gov.sl,200.0,statehouse.gov.sl,Home - Office of the President of Sierra Leone,,,2026-08-20,site_content,False,False
+statehouse.mw,200.0,statehouse.mw,Coming Soon,,,2026-08-20,site_content,False,False
+statehousekenya.go.ke,,,,,ConnectionError,2026-08-20,site_content,False,False
+staten-generaal.nl,200.0,staten-generaal.nl,Homepage Staten-Generaal - Staten-Generaal,,,2026-08-20,site_content,False,False
+statesassembly.gov.je,403.0,statesassembly.je,Just a moment...,,,2026-08-20,site_content,False,False
+statesassembly.je,403.0,statesassembly.je,Just a moment...,,,2026-08-20,site_content,False,False
+stj.pt,200.0,stj.pt,Bem-vindo ao website do Supremo Tribunal de Justiça,,,2026-08-20,site_content,False,False
+stjornarradid.is,200.0,stjornarradid.is,Stjórnarráðið | Forsíða,,,2026-08-20,site_content,False,False
+stortinget.no,200.0,stortinget.no,Forsiden - stortinget.no - stortinget.no,,,2026-08-20,site_content,False,False
+sudovi.me,200.0,sudovi.me,,,,2026-08-20,site_content,False,False
+supcourt.by,,,,,ConnectionError,2026-08-20,site_content,False,False
+supreme.court.gov.il,200.0,supreme.court.gov.il,בית המשפט העליון של ישראל,,,2026-08-20,site_content,False,False
+supreme.court.gov.ua,200.0,supreme.court.gov.ua,ВЕРХОВНИЙ СУД,,,2026-08-20,site_content,False,False
+supremecourt.gov,200.0,supremecourt.gov,Home - Supreme Court of the United States,,,2026-08-20,site_content,False,False
+supremecourt.gov.af,200.0,supremecourt.gov.af,Home | ستره محکمه,,,2026-08-20,site_content,False,False
+supremecourt.gov.bd,200.0,supremecourt.gov.bd,Home : Supreme Court of Bangladesh,,,2026-08-20,site_content,False,False
+supremecourt.gov.cy,,,,,ConnectionError,2026-08-20,site_content,False,False
+supremecourt.gov.ng,200.0,supremecourt.gov.ng,Supreme Court of Nigeria,,,2026-08-20,site_content,False,False
+supremecourt.gov.np,200.0,supremecourt.gov.np,à¤¸à¤°à¥à¤µà¥à¤à¥à¤ à¤ à¤¦à¤¾à¤²à¤¤ à¤¨à¥à¤ªà¤¾à¤²,,,2026-08-20,site_content,False,False
+supremecourt.gov.pk,400.0,supremecourt.gov.pk,Invalid URL,,,2026-08-20,site_content,False,False
+supremecourt.govmu.org,200.0,supremecourt.govmu.org,Home | The Supreme Court of Mauritius,,,2026-08-20,site_content,True,True
+supremecourt.ie,200.0,supremecourt.ie,Supreme Court,,,2026-08-20,site_content,False,False
+supremecourt.mn,200.0,supremecourt.mn,МОНГОЛ УЛСЫН ДЭЭД ШҮҮХ - Нүүр хуудас,,,2026-08-20,site_content,False,False
+supremecourt.or.th,,,,,ReadTimeout,2026-08-20,site_content,False,False
+supremecourt.uk,200.0,supremecourt.uk,The Supreme Court of the United Kingdom,,,2026-08-20,site_content,False,False
+supremecourt.wa.gov.au,200.0,supremecourt.wa.gov.au,Supreme Court of Western Australia,,,2026-08-20,site_content,False,False
+tbmm.gov.tr,200.0,tbmm.gov.tr,TÜRKİYE BÜYÜK MİLLET MECLİSİ - ANASAYFA,,,2026-08-20,site_content,False,False
+tc.gob.pe,200.0,tc.gob.pe,TC | Portal Web,,,2026-08-20,site_content,False,False
+tccb.gov.tr,,,,,SSLError,2026-08-20,site_content,False,False
+te.gob.mx,200.0,validate.perfdrive.com,Radware Bot Manager Captcha,,,2026-08-20,site_content,False,False
+thaigov.go.th,403.0,thaigov.go.th,Just a moment...,,,2026-08-20,site_content,False,False
+thedanishparliament.dk,403.0,thedanishparliament.dk,Just a moment...,,,2026-08-20,site_content,False,False
+theopc.gov.zw,200.0,theopc.gov.zw,Site is undergoing maintenance,,,2026-08-20,site_content,False,False
+thepresidency.gov.za,200.0,thepresidency.gov.za,Home 1 | The Presidency,,,2026-08-20,site_content,False,False
+thepresident.tt,,,,,ConnectionError,2026-08-20,site_content,False,False
+toaan.gov.vn,,,,,ConnectionError,2026-08-20,site_content,False,False
+tpa.judicial.gov.tw,,,,,SSLError,2026-08-20,site_content,False,False
+tps.judicial.gov.tw,,,,,SSLError,2026-08-20,site_content,False,False
+tribunalconstitucional.es,403.0,tribunalconstitucional.es,Voight-Kampff Browser Test,,,2026-08-20,site_content,False,False
+tsj.gob.ve,,,,,SSLError,2026-08-20,site_content,False,False
+tsjlegitimo.org,200.0,tsjlegitimo.org,tsjlegitimo.org,,,2026-08-20,site_content,True,True
+tsp.gob.cu,,,,,ConnectionError,2026-08-20,site_content,False,False
+ttparliament.org,200.0,ttparliament.org,Parliament &#8211; Parliament of the Republic of Trinidad and Tobago,,,2026-08-20,site_content,True,True
+tucamarapr.org,403.0,tucamarapr.org,,,,2026-08-20,site_content,True,True
+tunisie.gov.tn,503.0,tunisie.gov.tn,,,,2026-08-20,site_content,False,False
+turkiye.gov.tr,200.0,turkiye.gov.tr,e-Devlet Kapısı Devletin Kısayolu | www.türkiye.gov.tr,,,2026-08-20,site_content,False,False
+turkmenistan.gov.tm,200.0,turkmenistan.gov.tm,Altyn Asyr,,,2026-08-20,site_content,False,False
+tynwald.org.im,200.0,tynwald.org.im,Tynwald - Parliament of the Isle of Man,,,2026-08-20,site_content,False,False
+uaecabinet.ae,403.0,uaecabinet.ae,Just a moment...,,,2026-08-20,site_content,False,False
+up-rs.si,403.0,up-rs.si,Access Gateway,,,2026-08-20,site_content,False,False
+usa.gov,200.0,usa.gov,Making government services easier to find | USAGov,,,2026-08-20,site_content,False,False
+usoud.cz,200.0,usoud.cz,Ústavní soud České republiky - oficiální webové stránky,,,2026-08-20,site_content,False,False
+valitsus.ee,200.0,valitsus.ee,Avaleht | Eesti Vabariigi Valitsus,,,2026-08-20,site_content,False,False
+valtioneuvosto.fi,200.0,valtioneuvosto.fi,Etusivu - Valtioneuvosto,,,2026-08-20,site_content,False,False
+vatican.va,200.0,vatican.va,Vatican,,,2026-08-20,site_content,False,False
+vaticanstate.va,200.0,vaticanstate.va,Vatican State,,,2026-08-20,site_content,False,False
+vfgh.gv.at,200.0,vfgh.gv.at,Startseite - Der Österreichische Verfassungsgerichtshof,,,2026-08-20,site_content,False,False
+vijeceministara.gov.ba,200.0,vijeceministara.gov.ba,Početna,,,2026-08-20,site_content,False,False
+villasomalia.gov.so,200.0,villasomalia.gov.so,"Villa Somalia — Office of the President of the Federal Republic of Somalia &#8211; Guiding Somalia Toward Peace, Democracy, and Prosperity",,,2026-08-20,site_content,False,False
+visupremecourt.org,,,,,ConnectionError,2026-08-20,site_content,True,True
+vlada.gov.cz,200.0,vlada.gov.cz,Ãvod | VlÃ¡da ÄeskÃ© republiky,,,2026-08-20,site_content,False,False
+vlada.gov.hr,200.0,vlada.gov.hr,Naslovna | Vlada Republike Hrvatske,,,2026-08-20,site_content,False,False
+vlada.gov.sk,200.0,vlada.gov.sk,Domov | Úrad vlády Slovenskej republiky,,,2026-08-20,site_content,False,False
+vlada.mk,200.0,vlada.mk,Влада на Република Северна Македонија - Република Северна Македонија,,,2026-08-20,site_content,False,False
+vpctn.gov.vn,200.0,vpctn.gov.vn,TRANG THÔNG TIN ĐIỆN TỬ VĂN PHÒNG CHỦ TỊCH NƯỚC,,,2026-08-20,site_content,False,False
+vsrf.ru,200.0,vsrf.ru,Верховный Суд Российской Федерации,,,2026-08-20,site_content,False,False
+whitehouse.gov,200.0,hitehouse.gov,The White House,,,2026-08-20,site_content,False,False
+wsp.presidencia.gov.co,,,,,ConnectionError,2026-08-20,site_content,False,False
+yemenparliament.gov.ye,200.0,yemenparliament.gov.ye,مجلس النواب اليمني,,,2026-08-20,site_content,False,False
+zasag.mn,,,,,SSLError,2026-08-20,site_content,False,False
+президент.рф,200.0,kremlin.ru,Президент России,,,2026-08-20,site_content,False,False

@@ -1,0 +1,46 @@
+name: check
+
+# Runs the gates the project already has, on every push and pull request.
+#
+# Collection is deliberately absent. Everything under scripts/collect/ touches
+# the network, and guard-frozen fails the build if any target would execute it:
+# a measurement is a dated snapshot, and a CI job that re-collected would mean a
+# table and its inputs came from different days. CI therefore verifies the
+# analysis and the prose against the frozen data, which is exactly the part that
+# can silently rot.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: make setup
+
+      - name: Gates
+        run: make check
+
+      - name: Lint
+        run: |
+          venv/bin/pip install -q flake8
+          venv/bin/flake8 --max-line-length=100 --extend-ignore=E203,W503 analysis/ scripts/
+
+      # check-readme proves the README quotes figures the tables produce. It
+      # cannot prove the tables were regenerated from the committed data, so
+      # assert that too: a table edited by hand would otherwise pass every gate.
+      - name: Tables match the committed data
+        run: |
+          git diff --exit-code -- tables/ \
+            || { echo "tables/ changed when regenerated from committed data --"; \
+                 echo "run 'make tables' and commit the result."; exit 1; }

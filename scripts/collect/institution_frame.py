@@ -91,11 +91,25 @@ BRANCHES = {
 # on no evidence -- so the first fix used P361 alone and silently lost the Dutch
 # legislature while the country still appeared via its head of state, which is
 # exactly why the frame assertion is now PER BRANCH.
+# P576 (dissolved, abolished or demolished) and P582 (end time) are pulled
+# because the frame was carrying bodies that no longer exist. Five sat INSIDE
+# the measured sweep -- Mali's and Niger's national assemblies, dissolved after
+# their coups; Norfolk Island's, abolished in 2015; Venezuela's, ended
+# 2023-01-04; Kazakhstan's, dissolved 2026-07-01 -- and four of the five
+# published no DMARC. An abandoned parliament's domain rots, so counting it
+# reads as weak security in the branch that already looks worst.
+#
+# Recorded, NOT filtered. P576 does not distinguish "abolished" from "dissolved
+# pending an election", and a rule that dropped every dated body would throw out
+# a parliament that is merely between terms. The analysis decides; this records.
 QUERY = """
-SELECT ?country ?countryLabel ?iso3 ?body ?bodyLabel ?site ?sovereign WHERE {
+SELECT ?country ?countryLabel ?iso3 ?body ?bodyLabel ?site ?sovereign
+       ?dissolved ?ended WHERE {
   ?country wdt:%(prop)s ?body .
   OPTIONAL { ?country wdt:P298 ?iso3 }
   OPTIONAL { ?body wdt:P856 ?site }
+  OPTIONAL { ?body wdt:P576 ?dissolved }
+  OPTIONAL { ?body wdt:P582 ?ended }
   OPTIONAL { ?country wdt:P31 ?type . BIND(IF(?type = wd:Q3624078, true, 0) AS ?sovereign) }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
@@ -184,6 +198,9 @@ def main():
                 "sovereign": b.get("sovereign", {}).get("value") in ("true", "1"),
                 "website": site,
                 "domain": host_of(site),
+                "dissolved_date": (b.get("dissolved", {}).get("value")
+                                   or b.get("ended", {}).get("value") or None),
+                "domain_source": "wikidata_p856" if site else None,
             })
         print(f"  {branch:<22} {len(payload['results']['bindings']):>4} rows")
 
@@ -196,6 +213,11 @@ def main():
     # A body can carry several P31 values, so sovereignty arrives as several
     # rows; collapse to any-true before deduplicating.
     df["sovereign"] = df.groupby("country_qid")["sovereign"].transform("max")
+    # Same shape of problem as sovereign: a body can carry more than one
+    # dissolution or end date and arrives as one row per value. Collapse to the
+    # earliest before deduplicating, or the drop_duplicates below would keep
+    # several rows for one institution and inflate every count downstream.
+    df["dissolved_date"] = df.groupby(["branch", "body_qid"])["dissolved_date"].transform("min")
     df = df.drop_duplicates(["branch", "body_qid", "domain"])
 
     legs = set(df.cc3[df.branch == "legislature"].dropna())
@@ -206,6 +228,24 @@ def main():
             "composite-state failure -- check whether the institution hangs off "
             "the constituent country rather than the kingdom."
         )
+
+    # Fold in the websites resolved from Wikipedia and reviewed by hand. These
+    # carry domain_source='resolved' all the way to the posture table, because
+    # an expansion whose additions cannot be separated from the original frame
+    # is an expansion nobody can audit: resolution succeeds more often in
+    # well-documented countries, and every result therefore has to be
+    # computable on the Wikidata-sourced domains alone.
+    review_path = os.path.join(REPO, "data", "institution_sites_review.csv")
+    if os.path.exists(review_path):
+        acc = pd.read_csv(review_path)
+        acc = acc[acc.verdict == "accept"].set_index("body_qid").candidate_domain
+        fill = df.body_qid.map(acc)
+        newly = df.domain.isna() & fill.notna()
+        df.loc[newly, "domain"] = fill[newly]
+        df.loc[newly, "domain_source"] = "resolved"
+        print(f"\n  merged {int(newly.sum())} hand-reviewed resolved websites")
+    else:
+        print("\n  no institution_sites_review.csv; frame is Wikidata-only")
 
     df = df.sort_values(["country", "branch", "body"])
     df["retrieved_date"] = today
@@ -218,6 +258,15 @@ def main():
     print(f"  {int(have.sum())} rows with a resolvable domain, "
           f"{int((~have).sum())} without (kept, so the denominator stays honest)")
     print(f"  {df.domain.dropna().nunique()} distinct domains to sweep")
+
+    gone = df.dissolved_date.notna()
+    print(f"\n  {int(gone.sum())} rows carry a dissolution or end date, "
+          f"{int((gone & have).sum())} of them WITH a domain.")
+    print("  Kept and flagged, not dropped: P576 does not separate 'abolished'")
+    print("  from 'dissolved before an election'. Review them individually.")
+    if int((gone & have).sum()):
+        for _, r in df[gone & have].iterrows():
+            print(f"    {r.cc3} {r.branch:<20} {str(r.domain):<34} {r.dissolved_date[:10]}")
     print("\n  by branch:")
     for br, g in df.groupby("branch"):
         print(f"    {br:<22} {g.cc3.nunique():>3} jurisdictions, "
