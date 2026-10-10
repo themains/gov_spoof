@@ -265,9 +265,9 @@ not by good intentions.
 
 - [themains/pwned_pols][pp] — breach exposure of politicians' email addresses,
   the project this grew out of
-- Supersedes [themains/secure_gov][sg]
+- Supersedes [themains/gov_security][sg]
 
 [eurepoc]: https://eurepoc.eu/
 [cd]: https://github.com/domainaware/checkdmarc
 [pp]: https://github.com/themains/pwned_pols
-[sg]: https://github.com/themains/secure_gov
+[sg]: https://github.com/themains/gov_security
