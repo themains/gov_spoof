@@ -144,7 +144,7 @@ def dnssec_nameservers():
     the rule the rest of this file follows. A probe that does not exercise what
     the measurement exercises is not a probe.
 
-    Returning (None, None) is a legitimate outcome and is NOT a licence to
+    Returning (None, None) is a legitimate outcome and is NOT a license to
     record False: emit() turns it into dnssec_status='lookup_failed'.
     """
     import dns.resolver
@@ -212,7 +212,7 @@ def status_of(block):
       nxdomain      the domain does not resolve; a frame problem, not a posture one
       lookup_failed we could not find out; treat as missing
 
-    Anything unrecognised falls through to lookup_failed rather than to absent,
+    Anything unrecognized falls through to lookup_failed rather than to absent,
     so an unfamiliar error can never be mistaken for a finding.
     """
     if not isinstance(block, dict):
@@ -549,7 +549,7 @@ def emit(results, dom, today, ns_label, resolver=None):
     """
     # One pass to find the domains whose DNSSEC False needs qualifying, then
     # one concurrent sweep, then the row loop. Doing the lookup inside the loop
-    # is the same work serialised.
+    # is the same work serialized.
     needs_check = [
         r.get("domain")
         for r in results
@@ -624,7 +624,7 @@ def emit(results, dom, today, ns_label, resolver=None):
     # indistinguishable from a real one at every downstream check -- correctly
     # typed, correctly named, and quietly claiming that most of the world's
     # institutions publish no DMARC. Exiting non-zero without writing is the
-    # only behaviour that cannot be mistaken for a result.
+    # only behavior that cannot be mistaken for a result.
     # Checked PER COLUMN. The single-column version of this guard read
     # dmarc_status alone and certified the 2026-08-08 run as clean while the
     # DNSSEC column was 100% unmeasured: a healthy DMARC sweep says nothing

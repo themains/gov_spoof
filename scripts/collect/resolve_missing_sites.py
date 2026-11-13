@@ -253,7 +253,7 @@ def validate(domain, cc2):
 
     So everything that survives goes to `review`, and a person decides with the
     evidence in front of them. There are only ~40; that is a morning's work, not
-    a reason to automate a judgement that cannot be automated.
+    a reason to automate a judgment that cannot be automated.
     """
     if not domain:
         return "none_found", "no website field in the article"

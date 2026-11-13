@@ -24,7 +24,7 @@ threat environment fixed by construction, which no cross-country regression can.
 
 FILTERED ON HAVING AN ISO-3166 ALPHA-3 CODE (P298), not on being a sovereign
 state. The sovereignty filter silently lost real countries, because composite
-states are modelled differently:
+states are modeled differently:
 
     Netherlands  Q55 (ISO NLD) holds the States General but is a CONSTITUENT
                  country; the sovereign-state entity Q29999 has no P194 at all,
@@ -86,7 +86,7 @@ BRANCHES = {
 #
 # and neither pair has both facts on one entity. BOTH properties are needed:
 # Denmark links by `part of` (P361), the Netherlands only by `country` (P17).
-# An earlier diagnostic queried `P361 UNION P17` without labelling which
+# An earlier diagnostic queried `P361 UNION P17` without labeling which
 # property produced each row, and the Netherlands result was attributed to P361
 # on no evidence -- so the first fix used P361 alone and silently lost the Dutch
 # legislature while the country still appeared via its head of state, which is
