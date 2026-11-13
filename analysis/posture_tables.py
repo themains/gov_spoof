@@ -44,7 +44,7 @@ MEASURED = ("ok", "absent", "invalid")
 #                  valid DMARC record, so counting it credited Algeria's
 #                  parliament with the detective agency's good hygiene.
 #   never_theirs   a P856 value that was never the institution's at all.
-#   parallel_body  a real organisation, but not the state institution being
+#   parallel_body  a real organization, but not the state institution being
 #                  enumerated, and the state one is already in the frame.
 #   defunct_body   the institution itself no longer exists.
 #

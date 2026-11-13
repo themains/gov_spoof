@@ -25,7 +25,7 @@ records each — Belarus, El Salvador, Equatorial Guinea — which under RFC 748
 means receivers ignore both. It looks strict and protects nothing.
 
 The policy is read the way a receiver applies it, not the way the record is
-written. 33 domains carry no record of their own and inherit the organisational
+written. 33 domains carry no record of their own and inherit the organizational
 domain's, where RFC 7489 hands control to the subdomain tag `sp`. Four sit under
 a parent publishing a strict `p` with `sp=none`: read off `p` they look
 defended, and nothing blocks a forgery of them.
@@ -34,7 +34,7 @@ The denominator is domains we could actually ask about. The sweep covers 647,
 every national institution Wikidata records with a website, and 34 are excluded:
 17 no longer resolve at all, 9 sit behind unreachable nameservers, and 8 turned
 out not to be the institution's domain. Every result carries a status — `ok`,
-`absent`, `invalid`, `nxdomain` or `lookup_failed` — and anything unrecognised
+`absent`, `invalid`, `nxdomain` or `lookup_failed` — and anything unrecognized
 falls to `lookup_failed`, because conflating "publishes nothing" with "we could
 not ask" is the easiest way to manufacture a finding here, and an early version
 of this code did exactly that. The unreachable ones were re-checked through a
@@ -194,7 +194,7 @@ An institution whose domain can be spoofed is one where any citizen, journalist
 or member of staff can receive mail that appears to come from it and passes
 every check an ordinary mail client performs.
 
-That matters here more than for most organisations, because of how attacks on
+That matters here more than for most organizations, because of how attacks on
 political targets begin. In the [European Repository of Cyber Incidents][eurepoc],
 among incidents with a coded initial-access technique:
 

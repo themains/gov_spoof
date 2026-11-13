@@ -2,7 +2,7 @@
 
 Every test here failed before its fix. They are not coverage for its own sake:
 each one pins a specific way this pipeline was recording a measurement it had
-not made, which is the single failure mode the whole project is organised
+not made, which is the single failure mode the whole project is organized
 against.
 
 Nothing here touches the network. The functions under test are the pure ones;
@@ -35,7 +35,7 @@ def validate(monkeypatch):
 
     The real check queries live DNS. A unit test that needs the network is a
     test that fails in CI for reasons that have nothing to do with the code, so
-    the resolver is stubbed and the DNS behaviour is left to
+    the resolver is stubbed and the DNS behavior is left to
     verify_dns_posture.py, which runs against a real sweep by hand.
     """
     monkeypatch.setattr(resolve_missing_sites, "exists_in_dns", lambda d: True)
